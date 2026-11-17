@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Switzerland Travel Journal</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#e7e8e7;--card:#f5f7f8;--ink:#22303f;--mut:#5b6c78;--line:#c9d3da;--tile:#cfe3ef;--pill:#bcd9e8;--acc:#2c6485;--ok:#3f7f6a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#18232d;--card:#22303f;--ink:#e7e8e7;--mut:#9fb3c1;--line:#394a56;--tile:#2f4a5e;--pill:#394a56;--acc:#8fbfda;--ok:#8fcfb0}}
+:root[data-theme="dark"]{--bg:#18232d;--card:#22303f;--ink:#e7e8e7;--mut:#9fb3c1;--line:#394a56;--tile:#2f4a5e;--pill:#394a56;--acc:#8fbfda;--ok:#8fcfb0}
+*{box-sizing:border-box;font-family:"Times New Roman",Times,serif}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Times New Roman",Times,serif}
+nav{display:flex;gap:4px;overflow-x:auto;padding:10px 12px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5;border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+nav button{border:0;background:none;color:var(--ink);padding:9px 16px;border-radius:22px;white-space:nowrap;font:inherit;cursor:pointer}
+nav button.on{background:var(--pill)}
+main{max-width:760px;margin:auto;padding:0 14px 70px}
+svg.hero{display:block;width:100%;height:auto;border-radius:0 0 4px 4px}
+.hd{text-align:center;padding:18px 8px}
+.hd input.t{font-size:clamp(26px,7vw,40px);font-weight:800;letter-spacing:.03em;text-align:center;text-transform:uppercase;border:0;background:none;padding:0}
+.hd input.d{text-align:center;letter-spacing:.2em;color:var(--mut);border:0;background:none}
+.cd{display:flex;gap:10px;justify-content:center;align-items:center;margin-top:10px}.cd div{background:var(--tile);border-radius:16px;padding:8px 16px;text-align:center;min-width:64px}.cd b{font-size:26px;display:block;line-height:1.1}.cd span{font-size:12px;color:var(--mut)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:16px;margin:14px 0}
+h2{font-size:18px;margin:0 0 8px;color:var(--acc);font-weight:600}h3.big{font-size:26px;margin:22px 4px 8px}
+.row{display:flex;flex-wrap:wrap;gap:8px}.f{display:flex;flex-direction:column;flex:1 1 130px;min-width:0}.f.w{flex-basis:100%}
+label{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+input,textarea,select{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:8px 10px}
+textarea{min-height:64px;resize:vertical}input[type=checkbox]{width:20px;height:20px;flex:none;accent-color:var(--acc)}
+.btn{border:1px solid var(--line);background:var(--tile);color:var(--ink);padding:8px 16px;border-radius:22px;font:inherit;cursor:pointer;text-decoration:none;display:inline-block;font-size:14px}
+.btn.s{background:var(--pill)}.del{color:#b4534a;border:0;background:none;cursor:pointer;font-size:13px;padding:6px 0}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}.tile{background:var(--tile);border-radius:24px;padding:14px}.tile label{display:block}.tile input{background:transparent;border:0;border-bottom:1px dashed var(--mut);border-radius:0;padding:4px 0;font-weight:600}
+.fl{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 0;border-bottom:1px dashed var(--line)}.fl b{font-size:18px}.fl .tm{font-size:24px;font-weight:700}.fl small{color:var(--mut);display:block}
+.dc small{color:var(--mut);letter-spacing:.06em}.dc div{font-size:20px;font-weight:700}
+.warn{background:var(--pill);border-radius:18px;padding:10px 14px;margin:8px 0;display:flex;gap:10px;align-items:center}.warn input[type=text]{background:transparent;border:0}.warn.done input[type=text]{text-decoration:line-through;opacity:.6}
+.tl{border-left:2px solid var(--tile);margin-left:8px;padding-left:18px}.it{position:relative;margin-bottom:16px}.it::before{content:"";position:absolute;left:-27px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--card);border:2px solid var(--tile)}
+.it .tm{max-width:120px}.it .tt{font-weight:700}
+details summary{cursor:pointer;color:var(--acc);font-size:14px;margin-top:6px}
+.mut{color:var(--mut);font-size:14px}.big{font-size:26px;font-weight:700}
+.snow{position:fixed;inset:0;pointer-events:none;z-index:4;overflow:hidden}.snow i{position:absolute;top:-20px;color:#fff;opacity:.9;font-style:normal;animation:fall linear infinite;text-shadow:0 0 3px #2c6485}
+@keyframes fall{to{transform:translate(40px,108vh) rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.snow{display:none}.cute{animation:none!important}}
+.chips{display:flex;gap:8px;overflow-x:auto;overflow-y:hidden;padding:14px 2px 10px;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;touch-action:pan-x;scroll-behavior:smooth;scroll-snap-type:x proximity;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}.chips button{flex:none;scroll-snap-align:center;border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:20px;padding:6px 14px;font:inherit;cursor:pointer;text-align:center;line-height:1.25;white-space:nowrap}.chips button b{display:block;font-size:16px}.chips button small{color:var(--mut)}.chips button.on{background:var(--tile);border-color:var(--acc)}
+.dayhd{border-radius:26px;overflow:hidden;position:relative;margin-top:10px;border:3px solid var(--card)}.dayhd svg{display:block;width:100%;height:auto}.dayhd .lbl{position:absolute;left:14px;bottom:10px;background:var(--card);border-radius:16px;padding:4px 14px;font-weight:700}
+.lin{border:0;background:none;font:inherit;color:var(--acc);font-weight:600;font-size:18px;padding:0;width:100%;border-radius:0}.lin:focus{outline:none;border-bottom:1px dashed var(--mut)}.lin.big{font-size:inherit;color:var(--ink);font-weight:700}.lin.cdl{width:auto;max-width:110px;font-size:13px;color:var(--mut);text-align:center}
+.crew{display:flex;gap:14px;justify-content:center;margin-bottom:8px}.crew .nm{font-size:13px;font-weight:700}.crew .cute{text-align:center}
+.who{display:flex;align-items:center;gap:8px;margin:8px 0}.who input{flex:1}.who select{width:auto}.who svg{flex:none}
+.tile textarea{background:transparent;border:0;border-bottom:1px dashed var(--mut);border-radius:0;min-height:44px;font-weight:600;padding:4px 0}
+.card{position:relative}.card::before{content:"";position:absolute;top:-6px;left:24px;width:44px;height:11px;border-radius:11px 11px 3px 3px;background:#fff;box-shadow:62px 1px 0 -1px #fff,120px 2px 0 -3px #fff;pointer-events:none}
+.herow{position:relative}.wk{position:absolute;bottom:7%;left:2%;width:clamp(42px,10vw,70px);animation:stroll 22s linear infinite;pointer-events:none}.wk svg{display:block;width:100%;height:auto;animation:hop .45s ease-in-out infinite alternate}
+@keyframes stroll{0%{left:2%;transform:scaleX(1)}48%{left:86%;transform:scaleX(1)}50%{left:86%;transform:scaleX(-1)}98%{left:2%;transform:scaleX(-1)}100%{left:2%;transform:scaleX(1)}}
+@keyframes hop{to{transform:translateY(-3px)}}
+.lg{transform-box:fill-box;transform-origin:50% 0;animation:leg .45s ease-in-out infinite alternate}.lg.r{animation-direction:alternate-reverse}@keyframes leg{from{transform:rotate(-24deg)}to{transform:rotate(24deg)}}
+@media(prefers-reduced-motion:reduce){.wk,.wk svg,.lg{animation:none!important}}
+/* Day-scene characters: gentle, activity-specific movement */
+.day-figure{overflow:visible;transform-box:fill-box;transform-origin:50% 92%;will-change:transform}
+.day-figure.person-0{animation-delay:-.35s}
+.day-figure.person-1{animation-delay:-1.1s}
+.day-figure.person-2{animation-delay:-1.8s}
+.day-figure.act-0{animation:day-step 1.05s ease-in-out infinite}
+.day-figure.act-1{animation:day-ski .95s ease-in-out infinite}
+.day-figure.act-2{animation:day-crouch 1.5s ease-in-out infinite}
+.day-figure.act-3{animation:day-cocoa 1.8s ease-in-out infinite}
+.day-figure.act-4{animation:day-photo 2.1s ease-in-out infinite}
+.day-figure.act-5{animation:day-sled 1.25s ease-in-out infinite}
+.day-figure.act-6{animation:day-throw 1.35s ease-in-out infinite}
+.day-figure.act-7{animation:day-skate 1.4s ease-in-out infinite}
+.day-figure.act-8{animation:day-map 2.4s ease-in-out infinite}
+.day-figure.act-9{animation:day-cable 2.6s ease-in-out infinite}
+.day-figure.act-10{animation:day-train 1.7s ease-in-out infinite}
+.day-figure.act-11{animation:day-look 2.8s ease-in-out infinite}
+.day-figure.act-12{animation:day-movie 3s ease-in-out infinite}
+.day-figure.act-13{animation:day-nap 3.8s ease-in-out infinite}
+.day-figure.act-14{animation:day-shop 1.8s ease-in-out infinite}
+.day-figure.act-15{animation:day-tram 1.9s ease-in-out infinite}
+.day-figure.act-16{animation:day-snack 2s ease-in-out infinite}
+.day-figure.act-17{animation:day-cheer 1.6s ease-in-out infinite}
+.day-figure{transform-box:fill-box;transform-origin:50% 88%;will-change:transform}
+.day-figure.person-1{animation-delay:-.45s!important}.day-figure.person-2{animation-delay:-.9s!important}
+.vehicle-cable{transform-box:fill-box;transform-origin:center;animation:cable-glide 5.5s ease-in-out infinite}
+.vehicle-train{transform-box:fill-box;transform-origin:center;animation:train-glide 2.8s ease-in-out infinite}
+.vehicle-tram{transform-box:fill-box;transform-origin:center;animation:tram-glide 3.2s ease-in-out infinite}
+@keyframes cable-glide{0%,100%{transform:translate(-18px,3px)}50%{transform:translate(28px,-2px)}}
+@keyframes train-glide{0%,100%{transform:translateX(-5px)}50%{transform:translateX(9px)}}
+@keyframes tram-glide{0%,100%{transform:translateX(-7px)}50%{transform:translateX(11px)}}
+
+@keyframes day-step{0%,100%{transform:translateY(0) rotate(-4deg)}25%{transform:translateY(-3px) rotate(3deg)}50%{transform:translateY(-8px) rotate(5deg)}75%{transform:translateY(-2px) rotate(-3deg)}}
+@keyframes day-ski{0%,100%{transform:translateY(2px) rotate(-12deg)}50%{transform:translateY(-5px) rotate(12deg)}}
+@keyframes day-crouch{0%,100%{transform:translateY(0) scaleY(1)}35%{transform:translateY(6px) scaleY(.88)}65%{transform:translateY(-3px) scaleY(1.04)}}
+@keyframes day-cocoa{0%,100%{transform:translateY(0) rotate(0)}30%{transform:translateY(-5px) rotate(-7deg)}65%{transform:translateY(-2px) rotate(7deg)}}
+@keyframes day-photo{0%,100%{transform:rotate(0) translateY(0)}30%{transform:rotate(-9deg) translateY(-4px)}60%{transform:rotate(7deg) translateY(-6px)}}
+@keyframes day-sled{0%,100%{transform:translate(-3px,1px) rotate(-9deg)}50%{transform:translate(5px,-6px) rotate(9deg)}}
+@keyframes day-throw{0%,100%{transform:rotate(0) translateY(0)}35%{transform:rotate(-12deg) translateY(-4px)}65%{transform:rotate(10deg) translateY(-7px)}}
+@keyframes day-skate{0%,100%{transform:translateX(-5px) rotate(-9deg)}50%{transform:translateX(6px) rotate(9deg)}}
+@keyframes day-map{0%,100%{transform:rotate(0)}30%{transform:rotate(-4deg) translateY(-2px)}65%{transform:rotate(3deg)}}
+@keyframes day-cable{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-3px) rotate(2deg)}}
+@keyframes day-train{0%,100%{transform:translateX(-1px)}50%{transform:translateX(2px)}}
+@keyframes day-look{0%,100%{transform:rotate(0)}40%{transform:rotate(3deg) translateY(-1px)}}
+@keyframes day-movie{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+@keyframes day-nap{0%,100%{transform:rotate(-2deg) translateY(0)}50%{transform:rotate(2deg) translateY(1px)}}
+@keyframes day-shop{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-4px) rotate(3deg)}}
+@keyframes day-tram{0%,100%{transform:translateX(-2px) rotate(-1deg)}50%{transform:translateX(2px) rotate(1deg)}}
+@keyframes day-snack{0%,100%{transform:translateY(0) rotate(0)}35%{transform:translateY(-3px) rotate(-3deg)}70%{transform:translateY(-1px) rotate(3deg)}}
+@keyframes day-cheer{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-6px) rotate(4deg)}}
+@media(prefers-reduced-motion:reduce){.day-figure{animation:none!important;will-change:auto}}
+
+.ck{display:flex;align-items:center;gap:6px;font-size:14px;margin:0 12px 0 0;text-transform:none;letter-spacing:0;color:var(--ink)}
+.ph{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px}.ph:not(:empty){margin-bottom:10px}.pi{position:relative}.pi img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;display:block}.pdel{position:absolute;top:4px;right:4px;border:0;background:rgba(0,0,0,.55);color:#fff;border-radius:50%;width:24px;height:24px;cursor:pointer}
+@media print{nav,.snow,.btn,.del,.herow,.hd{display:none!important}}
+.bar{height:8px;background:var(--tile);border-radius:6px;margin-top:6px;overflow:hidden}.bar i{display:block;height:100%;background:var(--acc)}.late{display:inline-block;background:var(--acc);color:var(--card);border-radius:12px;padding:2px 10px;font-size:13px;margin-bottom:6px}.it.ok .tt input{text-decoration:line-through;opacity:.7}.it.off{opacity:.55}.it.off .tt input{text-decoration:line-through}.rt{margin-bottom:8px;font-size:17px;line-height:1.35}.warnb{background:var(--pill);border-color:var(--acc)}
+.f.ic{flex:0 0 66px}.f.ic select{font-size:20px;padding:6px 2px}
+.cute{display:inline-block;animation:bob 3s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-5px)}}
+h2::before{content:"❄ ";font-size:.85em}.card{box-shadow:0 3px 0 var(--line)}button.card{display:block;width:100%;text-align:left;font:inherit;color:inherit;cursor:pointer}
+
+
+/* Extra Swiss winter storybook animations */
+.day-figure{cursor:pointer;outline:none}
+.day-figure:focus{filter:drop-shadow(0 0 4px #f3c96b)}.day-figure.character-pop{animation:character-pop .55s cubic-bezier(.2,1.5,.4,1)!important}@keyframes character-pop{0%{transform:scale(1)}45%{transform:scale(1.28) rotate(8deg)}100%{transform:scale(1)}}
+.footprints{animation:prints-drift 7s ease-in-out infinite alternate}
+@keyframes prints-drift{from{opacity:.18;transform:translateX(-4px)}to{opacity:.9;transform:translateX(10px)}}
+.scene-sparkles{animation:sparkle 2.5s ease-in-out infinite alternate}
+@keyframes sparkle{from{opacity:.15}to{opacity:1}}
+.day-star{display:inline-block;color:#b9852c;font-weight:800;animation:star-pop .7s cubic-bezier(.2,1.6,.4,1) both}
+@keyframes star-pop{from{transform:scale(0) rotate(-35deg)}to{transform:scale(1) rotate(0)}}
+.gift-bounce{display:inline-block;animation:gift-bob 1.4s ease-in-out infinite}
+@keyframes gift-bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-5px) rotate(5deg)}}
+#travel-toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:30;background:#fff8e9;color:#594b3e;border:1px solid #ead8b7;border-radius:18px;padding:10px 16px;box-shadow:0 8px 28px #26374633;font-weight:700;transition:.25s;max-width:90vw;text-align:center}
+#travel-toast.show{opacity:1;transform:translate(-50%,0)}
+@media(prefers-reduced-motion:reduce){.footprints,.scene-sparkles,.gift-bounce{animation:none!important}}
+
+
+/* Use Times New Roman throughout the entire journal */
+html,body,body *{font-family:"Times New Roman",Times,serif!important}
+
+.cloudbar{max-width:1100px;margin:10px auto 0;padding:0 14px;color:var(--ink)}
+.cloud-panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.cloud-panel .cloud-title{font-weight:700}.cloud-panel .cloud-status{font-size:13px;color:var(--mut);flex:1;min-width:170px}
+.cloud-panel input{font:inherit;border:1px solid var(--line);border-radius:9px;padding:8px 10px;background:var(--bg);color:var(--ink);min-width:150px;max-width:220px}
+.cloud-panel button{font:inherit;border:1px solid var(--line);border-radius:9px;padding:8px 12px;background:var(--tile);color:var(--ink);cursor:pointer}
+.cloud-panel button.primary{background:var(--acc);color:white;border-color:var(--acc)}
+.cloud-panel .cloud-error{width:100%;font-size:12px;color:#b44}
+@media(max-width:600px){.cloud-panel{align-items:stretch}.cloud-panel input{max-width:none;flex:1 1 100%}.cloud-panel button{flex:1}}
+
+</style><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head><body>
+<div id="cloudbar" class="cloudbar"></div><nav id="nav"></nav><main id="main"></main>
+<script>
+const KEY='swiss-journal-v1';
+const days=[["2026-12-26","Depart Kuala Lumpur","—",[["17:30","Head to KLIA Terminal 1","Check-in and bag drop"],["20:35","SQ125 KUL → SIN","Airbus A350-900 · lands 21:55"],["22:00","Transit at Changi","Move to Terminal 3 for SQ346 (01:30)"]]],
+["2026-12-27","Arrive Zurich","Room’s chez BeNi",[["08:00","Land in Zurich (SQ346)","Boeing 777-300ER"],["","Immigration, bags, SIM, train tickets",""],["","Travel to Room’s chez BeNi","Ask about early check-in or luggage drop"]]],
+["2026-12-28","","Room’s chez BeNi",[]],
+["2026-12-29","Move to Brienz","B & B Brienz",[["","Check out of Room’s chez BeNi",""],["","Check in at B & B Brienz",""]]],
+["2026-12-30","","B & B Brienz",[]],
+["2026-12-31","New Year’s Eve","B & B Brienz",[["","Dinner plan","Book in advance if possible"]]],
+["2027-01-01","Move to Zurich","Hotel Marta",[["","Check out of B & B Brienz",""],["","Check in at Hotel Marta",""]]],
+["2027-01-02","","Hotel Marta",[]],
+["2027-01-03","Move to the airport","Capsule Hotel – Zurich Airport",[["","Check out of Hotel Marta",""],["","Check in at Capsule Hotel – Zurich Airport",""]]],
+["2027-01-04","Fly home","In flight",[["07:15","Be at the airport","Check in and drop bags"],["10:15","SQ345 ZRH → SIN","Lands 05:50 on 5 Jan"]]],
+["2027-01-05","Back to Malaysia","Home",[["05:50","Land at Changi",""],["08:25","SQ106 SIN → KUL","Lands 09:30"]]]];
+const D={title:"Switzerland Travel Journal",dates:"2026.12.27 — 2027.01.04",nights:"8 nights",transport:"Trains (add passes here)",people:"",
+flights:[["SQ125","KUL","SIN","2026-12-26T20:35","2026-12-26T21:55"],["SQ346","SIN","ZRH","2026-12-27T01:30","2026-12-27T08:00"],["SQ345","ZRH","SIN","2027-01-04T10:15","2027-01-05T05:50"],["SQ106","SIN","KUL","2027-01-05T08:25","2027-01-05T09:30"]].map(a=>({no:a[0],from:a[1],to:a[2],dep:a[3].replace("2027-12","2026-12"),arr:a[4],note:"Ref D6LLBK",price:""})),
+stays:[["Room’s chez BeNi","2026-12-27","2026-12-29",2511.89],["B & B Brienz","2026-12-29","2027-01-01",3513.13],["Hotel Marta (Zurich old town)","2027-01-01","2027-01-03",2576.59],["Capsule Hotel – Zurich Airport","2027-01-03","2027-01-04",970.5]].map(a=>({name:a[0],in:a[1],out:a[2],price:a[3],status:"Confirmed",addr:"",ref:"",note:""})),
+days:days.map(a=>({date:a[0],title:a[1],stay:a[2],items:a[3].map(x=>({time:x[0],title:x[1],note:x[2]}))})),
+confirm:["Early check-in at Room’s chez BeNi (landing 08:00)","How to travel BeNi → Brienz on 29 Dec","Parking details for the stays","New Year’s Eve dinner booking","Capsule hotel check-in vs. the 10:15 flight on 4 Jan"].map(t=>({t,d:false})),
+food:[],exp:[],
+todo:["Passport valid 6+ months","Check entry rules and travel insurance","Online check-in (opens 48h before each flight)","Swiss Travel Pass / train tickets","CHF cash or a no-fee card","eSIM or roaming","Plug adapter (Type J)","Winter clothes, gloves, boots","Offline maps and the SBB app"].map(t=>({t,d:false})),
+weather:days.slice(1,10).map(a=>({date:a[0],place:a[2],fc:"",note:""}))};
+let S;try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){}if(!S||!S.flights)S=JSON.parse(JSON.stringify(D));
+let sbClient=null,cloudUser=null,cloudSaveTimer=null,cloudBusy=false,cloudStatus="Local only",cloudRevision=0;
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){};queueCloudSave()};
+const esc=s=>String(s??"").replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;");
+const P=p=>p.split(".").reduce((a,k)=>a?.[k],S);
+const setP=(p,v)=>{const k=p.split("."),l=k.pop();k.reduce((a,x)=>a[x],S)[l]=v};
+const I=(p,l,t="text",c="")=>`<div class="f ${c}"><label>${l}</label><input type="${t}" data-p="${p}" value="${esc(P(p))}"></div>`;
+const T=(p,l)=>`<div class="f w"><label>${l}</label><textarea data-p="${p}">${esc(P(p))}</textarea></div>`;
+const X=(p,i)=>`<button class="del" data-del="${p}" data-i="${i}">Remove</button>`;
+const A=(p,l)=>`<button class="btn" data-add="${p}">+ ${l}</button>`;
+const fm=n=>"MYR "+n.toLocaleString("en-MY",{minimumFractionDigits:2,maximumFractionDigits:2});
+const sum=a=>a.reduce((s,x)=>s+(parseFloat(x.price??x.amt)||0),0);
+const fd=s=>{const d=new Date(s);return isNaN(d)?"—":d.toLocaleDateString("en-GB",{day:"numeric",month:"short",weekday:"short"})};
+const ft=s=>{const d=new Date(s);return isNaN(d)?"--:--":d.toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit",hour12:false})};
+const dl=s=>{const d=new Date(s+"T00:00");return isNaN(d)?"":d.toLocaleDateString("en-GB",{day:"numeric",month:"short"})};
+const hero=`<svg class="hero" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c6485"/><stop offset="1" stop-color="#bcd9e8"/></linearGradient></defs><rect width="400" height="250" fill="url(#g)"/><circle cx="332" cy="52" r="20" fill="#f3ecd6"/><ellipse cx="70" cy="48" rx="34" ry="8" fill="#eef2f4"/><ellipse cx="265" cy="95" rx="30" ry="6" fill="#eef2f4"/><polygon points="110,185 168,108 182,84 206,36 214,32 219,40 230,64 242,80 258,108 278,140 310,185" fill="#5c7a90"/><polygon points="214,32 219,40 230,64 242,80 258,108 278,140 310,185 270,185 246,140 226,96 216,60" fill="#22303f" opacity=".35"/><polygon points="206,36 214,32 219,40 224,52 214,56 208,70 198,66 202,50" fill="#fff"/><polygon points="182,84 192,70 198,80 190,96" fill="#fff" opacity=".9"/><polygon points="250,185 315,100 400,185" fill="#394a56"/><polygon points="315,100 298,121 310,116 320,126 331,114" fill="#fff"/><path d="M0 185 Q120 150 230 182 T400 180 V250 H0Z" fill="#f2f5f6"/><g fill="#7a9a8a"><polygon points="45,200 55,170 65,200"/><polygon points="52,185 55,160 70,185" opacity=".0"/><polygon points="330,196 340,166 350,196"/><polygon points="350,198 358,174 366,198"/></g><rect x="0" y="212" width="400" height="14" fill="#ddd3c0"/><g><rect x="120" y="196" width="26" height="16" rx="3" fill="#b6483c"/><rect x="148" y="196" width="26" height="16" rx="3" fill="#b6483c"/><rect x="176" y="196" width="26" height="16" rx="3" fill="#b6483c"/><g fill="#eef3f8"><rect x="124" y="200" width="6" height="5"/><rect x="134" y="200" width="6" height="5"/><rect x="152" y="200" width="6" height="5"/><rect x="162" y="200" width="6" height="5"/><rect x="180" y="200" width="6" height="5"/><rect x="190" y="200" width="6" height="5"/></g><circle cx="130" cy="214" r="4" fill="#6a5547"/><circle cx="190" cy="214" r="4" fill="#6a5547"/></g><rect x="36" y="146" width="2" height="46" fill="#6a5547"/><rect x="38" y="146" width="24" height="17" fill="#d52b1e"/><rect x="47" y="149" width="6" height="11" fill="#fff"/><rect x="44" y="152" width="12" height="5" fill="#fff"/><rect x="262" y="176" width="36" height="24" fill="#c9a27a"/><polygon points="257,177 280,156 303,177" fill="#8a6f5a"/><polygon points="264,172 280,159 296,172" fill="#fff"/><rect x="276" y="186" width="9" height="14" fill="#6a5547"/><rect x="266" y="182" width="7" height="6" fill="#ffe9a8"/><circle cx="82" cy="194" r="11" fill="#fff"/><circle cx="82" cy="178" r="8" fill="#fff"/><rect x="75" y="184" width="14" height="3" fill="#d5483c"/><polygon points="82,178 92,180 82,182" fill="#e8913a"/><circle cx="79" cy="176" r="1.2" fill="#333"/><circle cx="85" cy="176" r="1.2" fill="#333"/><ellipse cx="320" cy="140" rx="26" ry="6" fill="#fff" opacity=".7"/><circle cx="20" cy="150" r="2" fill="#fff"/><g fill="#fff" opacity=".85"><ellipse cx="288" cy="146" rx="4" ry="3"/><ellipse cx="294" cy="138" rx="5" ry="3.5"/><ellipse cx="302" cy="129" rx="6" ry="4"/></g><g fill="#2f5560"><polygon points="100,200 112,170 124,200" opacity="0"/></g><text x="110" y="62" font-size="11" fill="#fff">✦</text><text x="350" y="90" font-size="9" fill="#fff">✦</text><text x="20" y="100" font-size="8" fill="#fff">✦</text><path d="M0 120 Q50 140 100 120 T200 120 T300 120 T400 120" stroke="#3a362f" fill="none" opacity=".45"/><g fill="#f6c46b" opacity=".3"><circle cx="25" cy="127" r="6"/><circle cx="75" cy="127" r="6"/><circle cx="125" cy="113" r="6"/><circle cx="175" cy="113" r="6"/><circle cx="225" cy="127" r="6"/><circle cx="275" cy="127" r="6"/><circle cx="325" cy="113" r="6"/><circle cx="375" cy="113" r="6"/></g><g fill="#f6c46b"><circle cx="25" cy="127" r="2.4"/><circle cx="50" cy="130" r="2.4"/><circle cx="75" cy="127" r="2.4"/><circle cx="125" cy="113" r="2.4"/><circle cx="150" cy="110" r="2.4"/><circle cx="175" cy="113" r="2.4"/><circle cx="225" cy="127" r="2.4"/><circle cx="250" cy="130" r="2.4"/><circle cx="275" cy="127" r="2.4"/><circle cx="325" cy="113" r="2.4"/><circle cx="350" cy="110" r="2.4"/><circle cx="375" cy="113" r="2.4"/></g><circle cx="150" cy="40" r="2" fill="#fff"/><circle cx="380" cy="30" r="2" fill="#fff"/></svg>`;
+const tabs=[["ov","🏔️ Overview"],["it","📅 Days"],["tr","🚆 Trains"],["pl","📍 Places"],["bk","🗂️ Wallet"],["st","🏡 Stays"],["fd","🧀 Food"],["bd","💰 Budget"],["td","🧳 Packing"],["wx","🌨️ Weather"],["mm","📸 Memories"],["inf","🆘 Info"]];let tab="ov",dayIdx=0;
+const AVT={
+small:{c:"#f3f0ea",s:"#e0645c",k:"#f6d9c2",b:`<path d="M17 66 Q13 20 50 20 Q87 20 83 66 L90 92 Q76 84 72 74 L28 74 Q24 84 10 92Z" fill="#4a3a2e"/>`,f:`<path d="M22 56 Q26 26 52 26 Q78 28 78 56 Q70 40 56 40 Q44 40 38 50 Q30 56 22 56Z" fill="#4a3a2e"/><path d="M42 29 Q40 42 31 55 M62 29 Q66 40 72 52 M20 74 Q18 84 12 90" stroke="#d9b56b" stroke-width="3.5" fill="none" stroke-linecap="round"/><circle cx="40" cy="58" r="9" fill="#fff" fill-opacity=".25" stroke="#c98f86" stroke-width="2.2"/><circle cx="60" cy="58" r="9" fill="#fff" fill-opacity=".25" stroke="#c98f86" stroke-width="2.2"/><path d="M49 57 h2" stroke="#c98f86" stroke-width="2.2"/><circle cx="62" cy="86" r="0"/><g fill="#f2d24a"><ellipse cx="38" cy="96" rx="3" ry="1.6"/><ellipse cx="50" cy="98" rx="3" ry="1.6"/><ellipse cx="62" cy="96" rx="3" ry="1.6"/></g>`},
+big:{c:"#9a4a32",s:"#f0b6c8",k:"#f7dcc6",b:`<path d="M17 64 Q13 20 50 20 Q87 20 83 64 L82 84 Q74 88 70 80 L30 80 Q26 88 18 84Z" fill="#241c1a"/>`,f:`<path d="M22 56 Q24 26 50 25 Q76 26 78 56 Q66 40 50 36 Q34 40 22 56Z" fill="#241c1a"/><ellipse cx="40" cy="53" rx="6" ry="2.6" fill="#e59ac4" opacity=".75"/><ellipse cx="60" cy="53" rx="6" ry="2.6" fill="#e59ac4" opacity=".75"/><path d="M34 55 l-3-3M38 53 l-1-4M66 55 l3-3M62 53 l1-4" stroke="#2a1d18" stroke-width="1.6" stroke-linecap="round"/><path d="M44 68 Q50 76 56 68 Q50 70 44 68Z" fill="#d4707a"/><ellipse cx="31" cy="66" rx="6" ry="3.5" fill="#f08a96" opacity=".45"/><ellipse cx="69" cy="66" rx="6" ry="3.5" fill="#f08a96" opacity=".45"/>`},
+mom:{c:"#2f4a41",s:"#d9c28f",k:"#ebc29c",b:`<path d="M16 66 Q10 18 50 18 Q90 18 84 66 Q90 84 80 92 Q74 80 72 72 L28 72 Q26 80 20 92 Q10 84 16 66Z" fill="#6b4331"/>`,f:`<path d="M22 54 Q30 24 56 26 Q78 28 78 52 Q66 40 52 40 Q36 42 22 54Z" fill="#6b4331"/><circle cx="23" cy="64" r="2.2" fill="#f2c14e"/><circle cx="77" cy="64" r="2.2" fill="#f2c14e"/><path d="M26 30 Q22 44 20 60 M76 34 Q80 48 79 64" stroke="#8a5a40" stroke-width="2" fill="none" opacity=".5"/>`},
+dad:{c:"#7084a0",s:"#6fa3c7",k:"#f1cfae",b:"",f:`<path d="M24 52 Q26 26 50 26 Q74 26 76 52 Q66 38 50 40 Q34 38 24 52Z" fill="#3d2f27"/>`}};
+const av=(t,z=64)=>{const a=AVT[t]||AVT.mom;return`<svg width="${z}" height="${z}" viewBox="0 0 100 100" style="border-radius:50%;background:var(--tile)"><path d="M12 100 Q50 72 88 100Z" fill="${a.c}"/>${a.b}<path d="M30 80 Q50 94 70 80 L73 93 Q50 105 27 93Z" fill="${a.s}"/><rect x="60" y="86" width="9" height="15" rx="3" fill="${a.s}"/><circle cx="50" cy="56" r="28" fill="${a.k}"/><circle cx="40" cy="58" r="3" fill="#4a3a30"/><circle cx="60" cy="58" r="3" fill="#4a3a30"/><ellipse cx="32" cy="66" rx="5" ry="3" fill="#f4a3a3" opacity=".5"/><ellipse cx="68" cy="66" rx="5" ry="3" fill="#f4a3a3" opacity=".5"/><path d="M44 68 Q50 74 56 68" stroke="#b5544a" fill="none" stroke-width="2" stroke-linecap="round"/>${a.f}<circle cx="34" cy="30" r="2" fill="#fff"/><circle cx="66" cy="27" r="1.6" fill="#fff"/><circle cx="52" cy="22" r="1.4" fill="#fff"/></svg>`};
+const GROUND=`<svg viewBox="0 0 400 90" style="display:block;width:100%;margin-top:30px"><path d="M0 50 Q100 20 200 46 T400 40 V90 H0Z" fill="#fff"/><path d="M0 68 Q120 48 240 66 T400 60 V90 H0Z" fill="#d7e1e8"/><g fill="#2f5560"><polygon points="24,52 38,16 52,52"/><polygon points="56,56 66,28 76,56"/><polygon points="330,50 344,14 358,50"/><polygon points="360,54 370,28 380,54"/></g><g fill="#fff"><polygon points="38,16 30,32 46,32"/><polygon points="66,28 60,40 72,40"/><polygon points="344,14 336,30 352,30"/><polygon points="370,28 364,40 376,40"/></g><circle cx="200" cy="66" r="11" fill="#fff" stroke="#c3d0d9"/><circle cx="200" cy="50" r="8" fill="#fff" stroke="#c3d0d9"/><rect x="193" y="56" width="14" height="3" fill="#d5483c"/><polygon points="200,50 210,52 200,54" fill="#e8913a"/><circle cx="197" cy="48" r="1.1" fill="#333"/><circle cx="203" cy="48" r="1.1" fill="#333"/><rect x="262" y="28" width="3" height="38" fill="#6a5547"/><circle cx="263.5" cy="26" r="6" fill="#ffe9a8"/><g fill="#fff"><circle cx="110" cy="30" r="2"/><circle cx="150" cy="14" r="1.6"/><circle cx="300" cy="22" r="2"/></g></svg>`;
+const PACK=["Passport","Travel insurance","Phone charger & power bank","Plug adapter (Type J)","Winter coat","Thermal underwear","Gloves","Beanie / hat","Scarf","Warm socks","Snow boots","Lip balm & moisturiser"];
+const PHK='swiss-photos-v1';let PH={};try{PH=JSON.parse(localStorage.getItem(PHK))||{}}catch(e){}
+const savePH=()=>{try{localStorage.setItem(PHK,JSON.stringify(PH))}catch(e){alert("Photo storage is full. Remove some photos or export a backup.")}queueCloudSave()};
+const uid=()=>Math.random().toString(36).slice(2,8);
+const phGrid=(id,ed)=>`<div class="ph">${(PH[id]||[]).map((u,j)=>`<div class="pi"><img src="${u}" alt="">${ed?`<button class="pdel" data-ph="${id}" data-i="${j}">✕</button>`:""}</div>`).join("")}</div>`;
+const upl=async t=>{const id=t.dataset.up;for(const f of t.files){try{const u=await new Promise((ok,no)=>{const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const k=Math.min(1,900/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=im.width*k;c.height=im.height*k;c.getContext("2d").drawImage(im,0,0,c.width,c.height);ok(c.toDataURL("image/jpeg",.72))};im.onerror=no;im.src=r.result};r.onerror=no;r.readAsDataURL(f)});(PH[id]??=[]).push(u)}catch(e){}}savePH();draw()};
+const headG=t=>{const a=AVT[t]||AVT.mom;return`${a.b}<circle cx="50" cy="56" r="28" fill="${a.k}"/><circle cx="40" cy="58" r="3" fill="#4a3a30"/><circle cx="60" cy="58" r="3" fill="#4a3a30"/><ellipse cx="32" cy="66" rx="5" ry="3" fill="#f4a3a3" opacity=".5"/><ellipse cx="68" cy="66" rx="5" ry="3" fill="#f4a3a3" opacity=".5"/><path d="M44 68 Q50 74 56 68" stroke="#b5544a" fill="none" stroke-width="2" stroke-linecap="round"/>${a.f}`};
+const WC={small:["#d9782d","#2c6485"],big:["#2c6485","#d9782d"],mom:["#394a56","#8fbfda"],dad:["#4f86a8","#d9782d"]};
+const walk=(c,i)=>{const t=c.av,w=WC[t]||WC.mom,a=AVT[t]||AVT.mom;return`<div class="wk" style="animation-duration:${20+i*6}s;animation-delay:-${i*7}s"><svg viewBox="0 0 64 94"><rect x="1" y="28" width="24" height="34" rx="8" fill="${w[1]}"/><rect x="3" y="20" width="20" height="8" rx="4" fill="#e8913a"/><path d="M3 30 Q13 20 23 30Z" fill="#fff"/><rect x="6" y="44" width="14" height="10" rx="3" fill="#000" opacity=".12"/><g class="lg"><rect x="24" y="68" width="8" height="17" rx="3" fill="#44505f"/><rect x="22" y="82" width="13" height="8" rx="3" fill="#6a5547"/></g><g class="lg r"><rect x="35" y="68" width="8" height="17" rx="3" fill="#44505f"/><rect x="33" y="82" width="13" height="8" rx="3" fill="#6a5547"/></g><rect x="20" y="44" width="28" height="28" rx="9" fill="${w[0]}"/><rect x="21" y="42" width="26" height="7" rx="3" fill="${a.s}"/><circle cx="22" cy="58" r="4" fill="#fff"/><g transform="translate(3 -6) scale(.6)">${headG(t)}</g></svg></div>`};
+const walkers=()=>S.crew.slice(0,4).map(walk).join("");
+const ACT=["Hiking","Skiing","Building a snowman","Sipping cocoa","Taking photos","Sledding","Snowball fight","Ice skating","Reading the map"],ACTI=["🥾","⛷️","⛄","☕","📸","🛷","❄️","⛸️","🗺️"];
+const FIG=(t,k)=>{if(k>=9&&k!=14&&k!=17)return VEH(t,k);const w=WC[t]||WC.mom,a=AVT[t]||AVT.mom,Z=[
+{b:`<rect x="1" y="28" width="24" height="34" rx="8" fill="${w[1]}"/><rect x="3" y="20" width="20" height="8" rx="4" fill="#e8913a"/><path d="M3 30 Q13 20 23 30Z" fill="#fff"/>`,f:`<line x1="53" y1="50" x2="58" y2="92" stroke="#6b5e52" stroke-width="2.5" stroke-linecap="round"/>`,h:[[20,62],[53,52]]},
+{f:`<rect x="0" y="89" width="64" height="4" rx="2" fill="#6b5e52"/><path d="M12 52 L6 92 M56 52 L62 92" stroke="#6b5e52" stroke-width="2.2" stroke-linecap="round"/>`,h:[[12,52],[56,52]],l:3},
+{f:`<circle cx="54" cy="80" r="11" fill="#fff" stroke="#c3d0d9"/><circle cx="54" cy="62" r="7.5" fill="#fff" stroke="#c3d0d9"/><circle cx="52" cy="60" r="1" fill="#333"/><circle cx="57" cy="60" r="1" fill="#333"/><polygon points="54,62 60,63.5 54,65" fill="#e8913a"/>`,h:[[44,70],[46,76]]},
+{f:`<rect x="43" y="50" width="11" height="10" rx="2" fill="#8a6f5a"/><path d="M54 53 q5 0 5 4 t-5 3" stroke="#8a6f5a" fill="none" stroke-width="2"/><path d="M46 46 q-2-4 1-6 M51 46 q-2-4 1-6" stroke="#fff" fill="none" opacity=".8"/>`,h:[[22,62],[44,56]]},
+{g:`<rect x="40" y="36" width="17" height="12" rx="2.5" fill="#3a362f"/><circle cx="48.5" cy="42" r="4" fill="#8aa0b4" stroke="#fff"/><rect x="43" y="34" width="6" height="3" fill="#3a362f"/><text x="56" y="34" font-size="9" fill="#f6c46b">✦</text>`,h:[[41,46],[52,46]]},
+{f:`<rect x="38" y="85" width="25" height="5" rx="2.5" fill="#d5483c"/><path d="M36 92 Q38 94 62 94" stroke="#6b5e52" stroke-width="2" fill="none"/><path d="M48 62 L42 86" stroke="#6b5e52" stroke-width="1.6"/>`,h:[[22,62],[48,62]]},
+{f:`<circle cx="55" cy="26" r="5" fill="#fff" stroke="#c3d0d9"/><circle cx="62" cy="22" r="1.4" fill="#fff"/><circle cx="66" cy="19" r="1" fill="#fff"/>`,h:[[22,62],[54,34]]},
+{b:`<ellipse cx="34" cy="92" rx="34" ry="4" fill="#cfe0ea"/>`,f:`<rect x="21" y="90" width="15" height="1.8" fill="#8896a1"/><rect x="33" y="90" width="15" height="1.8" fill="#8896a1"/>`,h:[[6,56],[62,56]]},
+{f:`<rect x="22" y="52" width="24" height="16" rx="2" fill="#efe3cf" stroke="#b5a08f"/><path d="M30 52 v16 M38 52 v16 M24 58 l5 2 6-3 8 3" stroke="#b5a08f" fill="none"/>`,h:[[22,60],[46,60]]},{},{},{},{},{},{f:SHOPBAGS,h:[[20,66],[46,66]]},{},{},{h:[[22,62],[46,62]]}][k],l=Z.l||0;
+return(Z.b||"")+`<rect x="${24-l}" y="68" width="8" height="17" rx="3" fill="#44505f"/><rect x="${22-l}" y="82" width="13" height="8" rx="3" fill="#6a5547"/><rect x="${35+l}" y="68" width="8" height="17" rx="3" fill="#44505f"/><rect x="${33+l}" y="82" width="13" height="8" rx="3" fill="#6a5547"/><rect x="20" y="44" width="28" height="28" rx="9" fill="${w[0]}"/><rect x="21" y="42" width="26" height="7" rx="3" fill="${a.s}"/>`+Z.h.map(p=>`<path d="M${p[0]<34?23:45} 49 L${p[0]} ${p[1]}" stroke="${w[0]}" stroke-width="6.5" stroke-linecap="round"/><circle cx="${p[0]}" cy="${p[1]}" r="3.6" fill="#fff"/>`).join("")+(Z.f||"")+`<g transform="translate(3 -6) scale(.6)">${headG(t)}</g>`+(Z.g||"")};
+const ymd=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+const prog=d=>{const a=d.items.filter(x=>x.st!="Cancelled"&&x.st!="Replaced"),n=a.length,k=a.filter(x=>x.st=="Done").length,rem=a.filter(x=>x.st!="Done"),od=rem.filter(x=>late(d,x)).length;return`<b>${k}/${n} done</b> · ${n?Math.round(k/n*100):0}% ${n&&k===n?`<span class="day-star">⭐ Day star earned!</span>`:""}${od?` · <span class="late">⏰ ${od} overdue</span>`:""}<div class="bar"><i style="width:${n?k/n*100:0}%"></i></div>`+(rem.length?`<p class="mut" style="margin:6px 0 0">Remaining: ${rem.map(x=>esc((x.time?x.time+" ":"")+x.title)).join(" · ")}</p>`:(n?`<p style="margin:6px 0 0">🎉 All done!</p>`:""))};
+const itc=x=>x.st=="Done"?"ok":x.st=="Cancelled"||x.st=="Replaced"?"off":"";
+const late=(d,x)=>{if(x.st!="Planned")return"";const t=new Date(d.date+"T00:00");if(isNaN(t))return"";const m=/^(\d{1,2}):(\d{2})/.exec(x.time||""),due=new Date(t);if(m)due.setHours(+m[1],+m[2]);else due.setDate(due.getDate()+1);return new Date()>due?`<span class="late">⏰ Overdue — mark done, cancel or replace</span> `:""};
+const alerts=()=>{let h="";const n=new Date(),dep=new Date(S.flights[0]?.dep||"");if(!isNaN(dep)){const st=new Date(dep);st.setHours(0,0,0,0);st.setDate(st.getDate()-1);const u=S.pre.filter(x=>!x.d);if(n>=st&&n<dep&&u.length)h+=`<div class="card warnb"><h2>⚠️ Leaving soon — ${u.length} to finish</h2>${u.map(x=>`<div>☐ ${esc(x.t)}</div>`).join("")}<button class="btn s" data-tab="td" style="margin-top:8px">Open checklist</button></div>`}const d=S.days.find(x=>x.date==ymd(n));if(d){const j=S.days.indexOf(d);h+=`<div class="card"><h2>📅 Today · ${esc(d.title||"Day "+j)}</h2>${prog(d)}<button class="btn s" data-tab="it" data-go="${j}" style="margin-top:8px">Open today’s plan</button></div>`}return h};
+const dur=x=>{const a=/^(\d+):(\d+)/.exec(x.dep||""),b=/^(\d+):(\d+)/.exec(x.arr||"");if(!a||!b)return"";let m=(b[1]*60+ +b[2])-(a[1]*60+ +a[2]);if(m<0)m+=1440;return Math.floor(m/60)+"h "+String(m%60).padStart(2,"0")+"m"};
+const rt=x=>`<b>${esc(x.from||"Start")} → ${esc(x.to||"Destination")}</b><br><span class="mut">${esc(x.dep||"--:--")} → ${esc(x.arr||"--:--")}${dur(x)?" · ⏱ "+dur(x):""} · ${x.xfer||0} change(s)${x.plat?" · Platform "+esc(x.plat):""}${x.booked?" · 🎟️ bought":""}</span>`;
+const BKT=["Train ticket","Hotel confirmation","Attraction ticket","Flight","Insurance","Other"];let bkq="",bkt="All",bks="All";
+const bkOk=x=>{const q=bkq.toLowerCase();return(bkt=="All"||x.type==bkt)&&(bks=="All"||x.pay==bks)&&(!q||[x.title,x.ref,x.note,x.type,x.date].join(" ").toLowerCase().includes(q))};
+const bkList=()=>{const o=S.bookings.map((x,i)=>i).filter(i=>bkOk(S.bookings[i])).sort((a,b)=>(S.bookings[a].date||"9").localeCompare(S.bookings[b].date||"9"));return o.length?o.map(i=>{const x=S.bookings[i];return`<div class="card"><div class="row">${SEL(`bookings.${i}.type`,"Type",BKT)}${I(`bookings.${i}.title`,"Title","text","w")}${I(`bookings.${i}.date`,"Date","date")}${I(`bookings.${i}.ref`,"Booking no.")}${I(`bookings.${i}.amt`,"Amount","number")}${SEL(`bookings.${i}.cur`,"Currency",["CHF","MYR"])}${SEL(`bookings.${i}.pay`,"Payment",["To pay","Paid"])}${I(`bookings.${i}.note`,"Notes","text","w")}</div><div style="margin-top:8px">${phGrid("bk"+x.id,true)}<label class="btn s">＋ Add screenshots<input type="file" accept="image/*" multiple hidden data-up="bk${x.id}"></label></div>${X("bookings",i)}</div>`}).join(""):`<p class="mut">Nothing found. Add train tickets, hotel confirmations and attraction tickets with screenshots.</p>`};
+const bkSum=()=>{const r=parseFloat(S.rate)||0,m=x=>(parseFloat(x.amt)||0)*(x.cur=="CHF"?r:1),p=S.bookings.filter(x=>x.pay=="Paid").reduce((a,x)=>a+m(x),0),u=S.bookings.filter(x=>x.pay!="Paid").reduce((a,x)=>a+m(x),0);return`${S.bookings.length} items · Paid <b>${fm(p)}</b> · To pay <b>${fm(u)}</b>`};
+const bfSet=t=>{const k=t.dataset.bf;if(k=="q")bkq=t.value;if(k=="t")bkt=t.value;if(k=="s")bks=t.value;const l=document.getElementById("bkl");if(l)l.innerHTML=bkList()};
+const settle=()=>{const n=S.crew.length;if(n<2)return"";const bal={};S.crew.forEach(c=>bal[c.name]=0);S.exp.forEach(x=>{const a=parseFloat(x.amt)||0;if(!a||!(x.who in bal)||x.sh===false)return;bal[x.who]+=a;S.crew.forEach(c=>bal[c.name]-=a/n)});const dr=[],cr=[];for(const k in bal){if(bal[k]<-0.005)dr.push([k,-bal[k]]);else if(bal[k]>0.005)cr.push([k,bal[k]])}const o=[];for(const d of dr)for(const c of cr){if(d[1]<=0.005)break;const m=Math.min(d[1],c[1]);if(m>0.005){o.push(`<div>💸 <b>${esc(d[0])}</b> pays <b>${esc(c[0])}</b> ${fm(m)}</div>`);d[1]-=m;c[1]-=m}}return o.length?`<h2 style="margin-top:10px">Who pays whom</h2>${o.join("")}`:`<div class="mut">Everyone is settled up 🎉</div>`};
+const LOCS=[["Zermatt – Matterhorn","zer"],["Interlaken – First","fir"],["Interlaken – Top of Europe","top"],["Zurich","zur"],["On the plane","fly"],["Winter (generic)","gen"]];
+const LI={zer:"🏔️",fir:"🚠",top:"🚆",zur:"🏙️",fly:"✈️",gen:"⛄"};
+const DEFLOC={"2026-12-26":LOCS[4][0],"2026-12-27":LOCS[0][0],"2026-12-28":LOCS[0][0],"2026-12-29":LOCS[1][0],"2026-12-30":LOCS[2][0],"2026-12-31":LOCS[1][0],"2027-01-01":LOCS[3][0],"2027-01-02":LOCS[3][0],"2027-01-03":LOCS[3][0],"2027-01-04":LOCS[4][0],"2027-01-05":LOCS[4][0]};
+const ACTS={zer:[[10,"Gornergrat train","🚆"],[9,"Cable car to Matterhorn Glacier Paradise","🚠"],[4,"Photos of the Matterhorn","📸"],[1,"Skiing","⛷️"],[3,"Cocoa in the village","☕"]],
+fir:[[9,"Cable car up to First","🚠"],[0,"First Cliff Walk","🥾"],[5,"Sledding","🛷"],[3,"Cocoa at the mountain hut","☕"],[1,"Skiing","⛷️"]],
+top:[[10,"Jungfrau railway to Top of Europe","🚆"],[4,"Photos at the Sphinx viewpoint","📸"],[6,"Snowball fight on the glacier","❄️"],[2,"Building a snowman","⛄"],[0,"Walking in the snow","🥾"]],
+zur:[[14,"Shopping on Bahnhofstrasse","🛍️"],[15,"Riding the tram","🚋"],[3,"Hot chocolate & pastries","☕"],[4,"Photos of the old town","📸"],[8,"Exploring the old town","🗺️"]],
+fly:[[11,"Gazing out of the window","✈️"],[12,"Watching a movie","🎬"],[13,"Napping","😴"],[16,"Snack time","🍪"]],
+gen:ACT.map((l,k)=>[k,l,ACTI[k]])};
+const lk=d=>(LOCS.find(x=>x[0]==d.loc)||LOCS[5])[1];
+const acts=i=>{const d=S.days[i],k=lk(d),L=ACTS[k],off=S.days.slice(0,i).filter(x=>lk(x)==k).length;return S.crew.slice(0,3).map((c,j)=>{const a=L[(off+j)%L.length];return{k:a[0],l:a[1],i:a[2],n:c.name,t:c.av}})};
+const figs=i=>acts(i).map((a,j)=>`<svg class="day-figure act-${a.k} person-${j}" role="button" tabindex="0" aria-label="Tap ${esc(a.n)} for a surprise" x="${100+j*70}" y="44" width="50" height="73" viewBox="0 0 64 94" overflow="visible">${FIG(a.t,a.k)}</svg>`).join("");
+const caps=i=>acts(i).map(a=>`${a.i} ${esc(a.n)}: ${a.l}`).join(" · ");
+const SHOPBAGS=`<rect x="8" y="66" width="12" height="15" rx="2" fill="#d9782d"/><path d="M11 66 q3-7 6 0" stroke="#d9782d" fill="none" stroke-width="1.6"/><rect x="44" y="66" width="12" height="15" rx="2" fill="#2c6485"/><path d="M47 66 q3-7 6 0" stroke="#2c6485" fill="none" stroke-width="1.6"/>`;
+const inF=(t,sc,x,y)=>`<g transform="translate(${x} ${y}) scale(${sc})">${FIG(t,17)}</g>`;
+const CAR=(t,c)=>`<rect x="-6" y="88" width="76" height="3" fill="#394a56"/><rect x="-2" y="14" width="68" height="70" rx="9" fill="${c}"/><rect x="5" y="20" width="54" height="38" rx="5" fill="#cfe3ef"/>${inF(t,.6,14,21)}<rect x="5" y="52" width="54" height="8" fill="${c}"/><rect x="-2" y="62" width="68" height="5" fill="#e7e8e7"/><circle cx="14" cy="86" r="5" fill="#22303f"/><circle cx="50" cy="86" r="5" fill="#22303f"/><rect x="-2" y="10" width="68" height="6" rx="3" fill="#22303f" opacity=".5"/>`;
+const SEAT=(t,pre,post)=>`<rect x="2" y="24" width="60" height="70" rx="14" fill="#2c6485"/>${inF(t,.78,7,12)}${pre}<rect x="2" y="66" width="60" height="28" rx="10" fill="#22303f"/>${post}`;
+const VEH=(t,k)=>k==9?`<path d="M-30 6 L94 -8" stroke="#22303f" stroke-width="2"/><g class="vehicle-cable"><line x1="32" y1="-1" x2="32" y2="12" stroke="#22303f" stroke-width="2"/><rect x="4" y="10" width="56" height="8" rx="4" fill="#c2412d"/><rect x="6" y="18" width="52" height="56" fill="#cfe3ef"/>${inF(t,.62,13,19)}<rect x="6" y="18" width="52" height="56" fill="none" stroke="#c2412d" stroke-width="3"/><rect x="4" y="58" width="56" height="22" rx="4" fill="#c2412d"/><rect x="22" y="65" width="20" height="3" rx="1.5" fill="#e7e8e7"/></g>`
+:k==10?`<g class="vehicle-train">${CAR(t,"#c2412d")}</g>`:k==15?`<g class="vehicle-tram">${CAR(t,"#2c6485")}</g>`:k==11?SEAT(t,"","")
+:k==12?SEAT(t,`<path d="M19 34 Q32.5 14 46 34" stroke="#c2412d" stroke-width="3" fill="none"/><rect x="16" y="32" width="5" height="9" rx="2" fill="#c2412d"/><rect x="44" y="32" width="5" height="9" rx="2" fill="#c2412d"/>`,`<rect x="12" y="70" width="40" height="20" rx="3" fill="#18232d" stroke="#8fbfda"/><polygon points="29,74 29,86 40,80" fill="#8fbfda"/>`)
+:k==13?SEAT(t,"",`<rect x="2" y="60" width="60" height="30" rx="10" fill="#8fbfda"/><path d="M8 70 h48 M8 78 h48" stroke="#cfe3ef" stroke-width="2"/><text x="46" y="18" font-size="12" fill="#2c6485">z</text><text x="53" y="9" font-size="9" fill="#2c6485">z</text>`)
+:SEAT(t,"",`<rect x="6" y="64" width="52" height="5" rx="2.5" fill="#e7e8e7"/><rect x="12" y="52" width="10" height="12" rx="2" fill="#fff"/><path d="M22 55 q4 0 4 4 t-4 3" stroke="#fff" fill="none" stroke-width="1.5"/><ellipse cx="42" cy="62" rx="10" ry="3" fill="#fff"/><circle cx="42" cy="59" r="4" fill="#d9a65c"/>`);
+const SKY=(id,a,b)=>`<defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient></defs><rect width="400" height="130" fill="url(#${id})"/>`;
+const PINES=`<g fill="#2f5560"><polygon points="20,116 30,86 40,116"/><polygon points="44,118 52,94 60,118"/></g><g fill="#fff"><polygon points="30,86 24,98 36,98"/><polygon points="52,94 47,104 57,104"/></g>`;
+const SNOWG=`<path d="M0 100 Q100 86 200 100 T400 98 V130 H0Z" fill="#f2f5f6"/>`;
+const BG={
+zer:()=>SKY("zs","#4f86a8","#cfe3ef")+`<circle cx="60" cy="26" r="12" fill="#f6efd9"/><polygon points="0,118 40,70 80,96 130,56 190,118" fill="#5c7a90"/><polygon points="130,56 118,72 128,68 136,78 146,66" fill="#fff"/><polygon points="215,118 262,70 274,52 292,8 299,6 303,12 312,30 322,44 334,66 352,92 400,108 400,118" fill="#394a56"/><polygon points="299,6 303,12 312,30 322,44 334,66 352,92 400,108 400,118 330,118 318,80 304,40" fill="#22303f" opacity=".55"/><polygon points="292,8 299,6 303,12 298,24 290,22 286,34 280,30 284,18" fill="#fff"/><polygon points="274,52 286,34 292,46 282,60 270,58" fill="#fff" opacity=".9"/>`+SNOWG+`<rect x="330" y="92" width="30" height="22" fill="#a9795a"/><polygon points="326,92 345,74 364,92" fill="#6b4a35"/><polygon points="332,88 345,77 358,88" fill="#fff"/><rect x="342" y="100" width="7" height="14" fill="#5a3d2b"/>`+PINES,
+fir:()=>SKY("fs","#4f86a8","#e7e8e7")+`<circle cx="50" cy="24" r="11" fill="#f6efd9"/><polygon points="0,118 70,46 130,92 190,36 260,104 330,40 400,118" fill="#5c7a90"/><polygon points="70,46 58,62 68,58 76,68 84,56" fill="#fff"/><polygon points="190,36 176,56 188,50 196,62 206,48" fill="#fff"/><polygon points="330,40 316,60 328,54 336,66 346,52" fill="#fff"/><path d="M0 112 L400 14" stroke="#22303f" stroke-width="1.6"/><line x1="300" y1="38" x2="300" y2="44" stroke="#22303f" stroke-width="1.6"/><rect x="288" y="44" width="24" height="17" rx="3" fill="#c2412d"/><rect x="292" y="48" width="7" height="6" fill="#cfe3ef"/><rect x="301" y="48" width="7" height="6" fill="#cfe3ef"/>`+SNOWG+`<path d="M330 94 L400 82" stroke="#394a56" stroke-width="3"/><path d="M340 94 v10 M360 90 v14 M380 86 v18" stroke="#394a56" stroke-width="2"/><rect x="350" y="62" width="34" height="12" rx="2" fill="#2c6485"/><text x="355" y="71" font-size="8" fill="#fff">FIRST</text>`+PINES,
+top:()=>SKY("ts","#4f86a8","#e7e8e7")+`<circle cx="40" cy="22" r="11" fill="#f6efd9"/><polygon points="120,118 190,50 220,64 262,8 290,40 320,62 400,118" fill="#5c7a90"/><polygon points="262,8 290,40 320,62 400,118 340,118 300,60" fill="#22303f" opacity=".4"/><polygon points="262,8 246,36 256,30 264,42 274,28 282,38" fill="#fff"/><polygon points="190,50 176,70 188,64 198,74 206,58" fill="#fff"/><rect x="298" y="60" width="26" height="12" fill="#e7e8e7"/><circle cx="311" cy="58" r="7" fill="#cfe3ef"/><rect x="310" y="46" width="2" height="12" fill="#394a56"/>`+SNOWG+`<path d="M290 110 L400 96" stroke="#394a56" stroke-width="2"/><rect x="330" y="98" width="22" height="9" rx="2" fill="#c2412d"/><rect x="354" y="96" width="22" height="9" rx="2" fill="#c2412d"/><rect x="316" y="74" width="74" height="13" rx="3" fill="#2c6485"/><text x="321" y="84" font-size="8" fill="#fff">TOP OF EUROPE</text>`+PINES,
+zur:()=>{const B=[[0,34,50,"#cdb89c"],[34,28,64,"#b8c6cf"],[62,36,46,"#d9c7b0"],[98,30,60,"#c3cdd3"],[128,34,42,"#e0cdb5"],[162,30,56,"#b9c4cc"],[192,38,48,"#d6c2a8"],[230,28,62,"#c6d0d6"],[258,38,44,"#dcc9b1"],[296,30,58,"#bfcad1"],[326,38,48,"#d3c0a6"],[364,36,54,"#b7c3cb"]];return SKY("zr","#8fbfda","#e7e8e7")+B.map(b=>{let w="";for(let r=0;r<Math.floor(b[2]/16);r++)for(let c=0;c<Math.floor(b[1]/11);c++)w+=`<rect x="${b[0]+4+c*11}" y="${100-b[2]+6+r*16}" width="5" height="7" fill="#f6c46b" opacity=".8"/>`;return`<rect x="${b[0]}" y="${100-b[2]}" width="${b[1]}" height="${b[2]}" fill="${b[3]}"/><rect x="${b[0]}" y="${96-b[2]}" width="${b[1]}" height="5" fill="#fff"/>`+w}).join("")+`<rect x="104" y="30" width="12" height="70" fill="#c9bba5"/><rect x="124" y="30" width="12" height="70" fill="#c9bba5"/><path d="M102 32 Q110 8 118 32Z" fill="#7fae9c"/><path d="M122 32 Q130 8 138 32Z" fill="#7fae9c"/><rect x="187" y="40" width="7" height="60" fill="#c9bba5"/><polygon points="186,40 190.5,0 195,40" fill="#6fa58f"/><rect x="254" y="44" width="16" height="56" fill="#d6c9b4"/><circle cx="262" cy="56" r="6" fill="#fff" stroke="#394a56"/><path d="M262 56 v-4 M262 56 l3 2" stroke="#22303f"/><polygon points="252,44 262,22 272,44" fill="#a6523f"/><rect y="100" width="400" height="30" fill="#d7e1e8"/><polygon points="362,104 374,66 386,104" fill="#2f5560"/><g fill="#f6c46b"><circle cx="370" cy="88" r="1.6"/><circle cx="378" cy="94" r="1.6"/><circle cx="374" cy="76" r="1.6"/></g>`},
+fly:()=>`<rect width="400" height="130" fill="#e7e8e7"/><rect width="400" height="14" fill="#cfd6db"/>${[125,195,265].map(c=>`<ellipse cx="${c}" cy="56" rx="30" ry="38" fill="#fff" stroke="#c9d3da" stroke-width="4"/><ellipse cx="${c}" cy="56" rx="24" ry="32" fill="#8fbfda"/><ellipse cx="${c+8}" cy="78" rx="15" ry="6" fill="#fff"/><ellipse cx="${c-10}" cy="40" rx="10" ry="4" fill="#fff" opacity=".8"/>`).join("")}<rect y="104" width="400" height="26" fill="#2c6485"/>`};
+const scene=i=>{const k=lk(S.days[i]);return k=="gen"?sceneGen(i):`<svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg">${BG[k]()}<g class="footprints" fill="#8fa9b9" opacity=".75"><ellipse cx="24" cy="113" rx="2.2" ry="4" transform="rotate(-25 24 113)"/><ellipse cx="34" cy="108" rx="2.2" ry="4" transform="rotate(25 34 108)"/><ellipse cx="44" cy="113" rx="2.2" ry="4" transform="rotate(-25 44 113)"/><ellipse cx="54" cy="108" rx="2.2" ry="4" transform="rotate(25 54 108)"/><ellipse cx="64" cy="113" rx="2.2" ry="4" transform="rotate(-25 64 113)"/></g>${figs(i)}<g class="scene-sparkles" fill="#fff"><circle cx="82" cy="26" r="2"/><circle cx="320" cy="38" r="2.5"/><circle cx="285" cy="18" r="1.8"/></g></svg>`};
+const SEL=(p,l,o,c="")=>`<div class="f ${c}"><label>${l}</label><select data-p="${p}">${o.map(x=>`<option ${x==P(p)?"selected":""}>${esc(x)}</option>`).join("")}</select></div>`;
+const CK=(p,l)=>`<label class="ck"><input type="checkbox" data-p="${p}" ${P(p)?"checked":""}> ${l}</label>`;
+const trSum=()=>{const n=S.trains.length,u=S.trains.filter(x=>x.pass).length,b=S.trains.filter(x=>x.booked).length,p=S.trains.reduce((a,x)=>a+(parseFloat(x.price)||0),0);return`Pass used on <b>${u}/${n}</b> legs · Tickets bought <b>${b}/${n}</b> · Fares <b>CHF ${p.toFixed(2)}</b>`};
+const bs=()=>{const f=sum(S.flights),h=sum(S.stays),e=sum(S.exp),t=f+h+e,n=S.crew.length||1,r=parseFloat(S.rate)||0;return`<div class="big">${fm(t)}</div><div class="mut">Flights ${fm(f)} · Stays ${fm(h)} · Spending ${fm(e)}</div><div class="mut">Split ${n} ways: <b>${fm(t/n)}</b> each (spending only ${fm(e/n)}) · ≈ CHF ${r?(t/r).toFixed(0):"–"} total</div>`+S.crew.map(c=>`<div class="mut">${esc(c.name)} paid ${fm(S.exp.filter(x=>x.who==c.name).reduce((a,x)=>a+(parseFloat(x.amt)||0),0))}</div>`).join("")+settle()};
+const calc=t=>{const r=parseFloat(S.rate)||0,v=parseFloat(t.value)||0,k=t.dataset.calc=="chf",o=document.querySelector(`[data-calc="${k?"myr":"chf"}"]`);o.value=k?(v*r).toFixed(2):(r?(v/r).toFixed(2):"")};
+const wear=x=>{const l=parseFloat(x.lo),s=parseFloat(x.snow);if(isNaN(l))return"Enter a low temperature for a clothing tip.";let t=l<=-5?"Heavy coat, thermals, gloves and hat":l<=0?"Warm coat, layers, gloves":l<=8?"Coat and a warm sweater":"Light jacket";if(s>=40)t+=" · waterproof boots, expect snow ❄️";return t};
+function extra(p,t){const b=document.getElementById("bs");if(b)b.innerHTML=bs();const r=document.getElementById("trs");if(r)r.innerHTML=trSum();if(p.startsWith("flights.0"))tick();let m;if(m=p.match(/^exp\.(\d+)\.chf$/)){const v=(parseFloat(t.value)||0)*(parseFloat(S.rate)||0);S.exp[m[1]].amt=v?v.toFixed(2):"";const q=document.querySelector(`[data-p="exp.${m[1]}.amt"]`);if(q)q.value=S.exp[m[1]].amt;save();if(b)b.innerHTML=bs()}if(m=p.match(/^exp\.(\d+)\.amt$/)){const r=parseFloat(S.rate)||0,v=parseFloat(t.value)||0;S.exp[m[1]].chf=r&&v?(v/r).toFixed(2):"";const q=document.querySelector(`[data-p="exp.${m[1]}.chf"]`);if(q)q.value=S.exp[m[1]].chf;save();if(b)b.innerHTML=bs()}if(m=p.match(/^trains\.(\d+)\./)){const q=document.querySelector(`[data-rt="${m[1]}"]`);if(q)q.innerHTML=rt(S.trains[m[1]])}if(p.startsWith("bookings.")){const q=document.getElementById("bks");if(q)q.innerHTML=bkSum()}if(m=p.match(/^weather\.(\d+)\./)){const q=document.querySelector(`[data-wx="${m[1]}"]`);if(q)q.textContent="👕 "+wear(S.weather[m[1]])}}
+const li=(k,c="")=>`<input class="lin ${c}" data-p="lb.${k}" value="${esc(S.lb[k])}">`;
+const ICONS=["📍","🚆","✈️","🍽️","☕","🏨","🎿","🚠","🛍️","📸","🧀","⛪","♨️","🚌","⛷️","🛷","⛄","🔥","🎄","🚋","🎬","😴","🍪"];
+const guess=t=>/check|hotel|stay/i.test(t)?"🏨":/SQ\d|land|fly|airport/i.test(t)?"✈️":/dinner|lunch|eat/i.test(t)?"🍽️":/train|travel|head/i.test(t)?"🚆":"📍";
+const fix=()=>{S.tiles??=[{label:"Length",value:S.nights||"8 nights"},{label:"Stays",value:S.stays.map(x=>x.name.split(" (")[0]).join(" → ")},{label:"Transport",value:S.transport||"Trains"}];S.crew??=[{name:"Little sis",av:"small"},{name:"Big sis",av:"big"},{name:"Mom",av:"mom"}];S.cards??=[];if(!S.v3){S.v3=1;const o={small:0,big:1,mom:2};S.crew.sort((a,b)=>(o[a.av]??9)-(o[b.av]??9));S.cards.push({title:"🧣 Winter essentials",body:"Thermal layers, warm socks, gloves, beanie, lip balm, hand warmers, waterproof boots."},{title:"☕ Cosy treats to try",body:"Hot chocolate, cheese fondue, raclette, roasted chestnuts."});S.todo.push({t:"Hand warmers and lip balm",d:false},{t:"Sunglasses (snow glare)",d:false})}S.lb=Object.assign({fl:"Flights",tv:"Travellers",qo:"Quick overview",cf:"To confirm",bk:"Backup",cd:"Countdown"},S.lb||{});S.rate??="5.05";S.trains??=[];S.pass??={name:"Swiss Travel Pass",valid:"",price:"",note:""};S.places??=[];S.memo??="";S.docs??=["Passport photo saved in cloud / email","Travel insurance policy saved offline","Flight e-tickets saved offline","Hotel confirmations saved offline","Emergency contacts saved in phone"].map(t=>({t,d:false}));S.sos??=[["Emergency (all-purpose)","112"],["Police","117"],["Fire","118"],["Ambulance","144"],["Rega air rescue","1414"]].map(a=>({label:a[0],value:a[1]}));S.contacts??=S.stays.map(x=>({label:x.name+" (hotel)",value:""})).concat([{label:"Singapore Airlines",value:""},{label:"Travel insurance",value:""},{label:"Malaysian embassy in Bern",value:""}]);S.crew.forEach(c=>{c.pack??=PACK.map(t=>({t,d:false}))});S.exp.forEach(e=>{e.chf??="";e.method??="";e.who??=""});S.weather.forEach(w=>{w.hi??="";w.lo??="";w.snow??=""});S.bookings??=[];S.bookings.forEach(b=>{b.id??=uid()});S.pre??=["Passports valid for 6+ months","Flight e-tickets saved offline (ref D6LLBK)","Online check-in done (opens 48h before each flight)","Travel insurance bought and PDF saved","Hotel confirmation emails saved offline","Train tickets and attraction tickets downloaded","Phone roaming / eSIM and data working","Power bank, chargers and plug adapter (Type J)","Swiss francs or a no-fee card ready"].map(t=>({t,d:false}));S.exp.forEach(e=>{e.sh??=true});S.days.forEach(d=>d.items.forEach(x=>{x.st??="Planned";x.alt??=""}));S.days.forEach(d=>{d.id??=uid();d.loc??=DEFLOC[d.date]||LOCS[5][0];d.fav??="";d.notes??="";d.todo??=[];d.items.forEach(x=>{x.icon??=guess(x.title)})})};
+const sceneGen=i=>{const c=["#2c6485","#6fa3c4","#8fbfda","#5c8fb0","#a6cde3","#7bb0cf"][i%6],k=i%6;return`<svg viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="130" fill="${c}"/><circle cx="${60+i*25%300}" cy="30" r="14" fill="#f6efd9"/><polygon points="40,110 150,28 260,110" fill="#5c7a90"/><polygon points="150,28 130,50 143,45 152,56 163,44 172,49" fill="#fff"/><polygon points="200,110 300,50 400,110" fill="#394a56"/><polygon points="300,50 286,66 296,62 304,70 313,60" fill="#fff"/><path d="M0 100 Q100 80 200 98 T400 96 V130 H0Z" fill="#f2f5f6"/>`+[`<rect x="300" y="86" width="34" height="24" fill="#c9a27a"/><polygon points="296,86 317,66 338,86" fill="#8a6f5a"/><polygon points="304,81 317,69 330,81" fill="#fff"/><rect x="313" y="95" width="8" height="15" fill="#6a5547"/>`,`<circle cx="320" cy="102" r="11" fill="#fff"/><circle cx="320" cy="85" r="8" fill="#fff"/><rect x="313" y="91" width="14" height="3" fill="#d5483c"/><polygon points="320,85 330,87 320,89" fill="#e8913a"/><circle cx="317" cy="83" r="1" fill="#333"/><circle cx="323" cy="83" r="1" fill="#333"/>`,`<line x1="0" y1="30" x2="400" y2="60" stroke="#6a5547" stroke-width="1.5"/><rect x="250" y="46" width="26" height="18" rx="4" fill="#d5483c"/><rect x="255" y="50" width="7" height="7" fill="#fff"/><rect x="265" y="50" width="7" height="7" fill="#fff"/>`,`<rect x="0" y="116" width="400" height="8" fill="#ddd3c0"/><rect x="290" y="104" width="24" height="12" rx="3" fill="#d5483c"/><rect x="316" y="104" width="24" height="12" rx="3" fill="#d5483c"/><circle cx="298" cy="118" r="3" fill="#6a5547"/><circle cx="332" cy="118" r="3" fill="#6a5547"/>`,`<path d="M296 110 A24 24 0 0 1 344 110Z" fill="#fff" stroke="#c3d0d9" stroke-width="2"/><path d="M308 110 v-14 M320 110 v-22 M332 110 v-14 M300 100 h40 M304 90 h32" stroke="#c3d0d9" stroke-width="1.5"/><path d="M316 110 a6 8 0 0 1 12 0Z" fill="#6a5547"/>`,`<g stroke="#6a5547" stroke-width="3" stroke-linecap="round"><line x1="300" y1="106" x2="340" y2="100"/><line x1="318" y1="100" x2="322" y2="84"/></g><circle cx="323" cy="79" r="6" fill="#f7d6bd"/><path d="M317 76 Q323 68 329 76Z" fill="#d5483c"/><line x1="322" y1="88" x2="332" y2="94" stroke="#d5483c" stroke-width="3" stroke-linecap="round"/>`][k]+`<g fill="#2f5560"><polygon points="28,112 40,80 52,112"/><polygon points="54,114 62,90 70,114"/><polygon points="76,112 84,94 92,112"/></g><g fill="#fff"><polygon points="40,80 33,94 47,94"/><polygon points="62,90 57,100 67,100"/><polygon points="84,94 79,103 89,103"/><circle cx="120" cy="40" r="2"/><circle cx="210" cy="20" r="1.6"/><circle cx="270" cy="38" r="2"/><circle cx="370" cy="24" r="1.6"/></g><rect x="380" y="76" width="3" height="34" fill="#6a5547"/><circle cx="381.5" cy="74" r="5" fill="#ffe9a8"/><g fill="#f6c46b" opacity=".85"><circle cx="14" cy="14" r="2.5"/><circle cx="40" cy="22" r="2"/><circle cx="360" cy="16" r="2.5"/><circle cx="330" cy="10" r="1.8"/></g>${figs(i)}</svg>`};
+const blank={flights:{no:"",from:"",to:"",dep:"",arr:"",note:"",price:""},stays:{name:"",in:"",out:"",price:"",status:"",addr:"",ref:"",note:""},days:{date:"",title:"",stay:"",items:[],notes:"",todo:[]},items:{time:"",title:"",note:"",icon:"📍",st:"Planned",alt:""},bookings:{type:"Train ticket",title:"",date:"",ref:"",amt:"",cur:"CHF",pay:"To pay",note:""},pre:{t:"",d:false},confirm:{t:"",d:false},tiles:{label:"New",value:""},cards:{title:"New note",body:""},crew:{name:"New traveller",av:"mom"},food:{name:"",date:"",type:"",status:"Not booked",addr:"",note:""},exp:{date:"",cat:"",desc:"",chf:"",amt:"",method:"",who:"",sh:true},trains:{from:"",to:"",date:"",dep:"",arr:"",xfer:"",plat:"",no:"",price:"",booked:false,pass:false,note:""},places:{name:"",date:"",addr:"",ticket:"",hours:"",res:"Not needed",winter:"✅ Great in winter",note:""},sos:{label:"",value:""},contacts:{label:"",value:""},docs:{t:"",d:false},pack:{t:"",d:false},todo:{t:"",d:false},weather:{date:"",place:"",fc:"",hi:"",lo:"",snow:"",note:""}};
+const chk=(p,i,k)=>`<div class="warn ${P(k)[i].d?"done":""}"><input type="checkbox" data-p="${k}.${i}.d" ${P(k)[i].d?"checked":""}><input type="text" data-p="${k}.${i}.t" value="${esc(P(k)[i].t)}"><button class="del" data-del="${k}" data-i="${i}">✕</button></div>`;
+const V={
+ov(){return`<div class="herow">${hero}${walkers()}</div>`+`<div class="hd"><div class="crew">${S.crew.map((c,j)=>`<div class="cute" style="animation-delay:${j*.4}s">${av(c.av,64)}<div class="nm">${esc(c.name)}</div></div>`).join("")}</div><input class="t" data-p="title" value="${esc(S.title)}"><input class="d" data-p="dates" value="${esc(S.dates)}"><div class="cd"><input class="lin cdl" data-p="lb.cd" value="${esc(S.lb.cd)}"><div><b id="cd0">0</b><span>days</span></div><div><b id="cd1">0</b><span>hrs</span></div><div><b id="cd2">0</b><span>min</span></div></div></div>
+${alerts()}<div class="card"><h2>${li("tv")}</h2>${S.crew.map((c,i)=>`<div class="who">${av(c.av,52)}<input data-p="crew.${i}.name" value="${esc(c.name)}"><select data-p="crew.${i}.av">${[["mom","Mom"],["big","Big sis"],["small","Little sis"],["dad","Dad"]].map(o=>`<option value="${o[0]}" ${o[0]==c.av?"selected":""}>${o[1]}</option>`).join("")}</select><button class="del" data-del="crew" data-i="${i}">✕</button></div>`).join("")}${A("crew","Add traveller")}</div>
+<div class="card"><h2>${li("fl")}</h2>${S.flights.map((f,i)=>`<div class="fl"><div><b>${esc(f.no)}</b><small>${fd(f.dep)}</small></div><div><div class="tm">${ft(f.dep)}</div><small>${esc(f.from)}</small></div><div>✈</div><div style="text-align:right"><div class="tm">${ft(f.arr)}</div><small>${esc(f.to)} · ${fd(f.arr)}</small></div></div><details><summary>Edit ${esc(f.no)}</summary><div class="row">${I(`flights.${i}.no`,"Flight")}${I(`flights.${i}.from`,"From")}${I(`flights.${i}.to`,"To")}${I(`flights.${i}.dep`,"Departs","datetime-local")}${I(`flights.${i}.arr`,"Arrives","datetime-local")}${I(`flights.${i}.price`,"Price (MYR)","number")}${I(`flights.${i}.note`,"Notes / seat / terminal","text","w")}</div>${X("flights",i)}</details>`).join("")}${A("flights","Add flight")}</div>
+<div class="tiles">${S.tiles.map((t,i)=>`<div class="tile"><input class="lin" style="font-size:12px;text-transform:uppercase;color:var(--mut)" data-p="tiles.${i}.label" value="${esc(t.label)}"><textarea data-p="tiles.${i}.value">${esc(t.value)}</textarea><button class="del" data-del="tiles" data-i="${i}">Remove</button></div>`).join("")}</div><div style="margin-top:10px">${A("tiles","Add info tile")}</div>
+<h3 class="big">${li("qo","big")}</h3>${S.days.map((d,i)=>`<button class="card dc" data-tab="it" data-go="${i}"><small>${dl(d.date)}</small><div>${esc(d.title||"Free day")}</div><span class="mut">${esc(d.stay)}</span></button>`).join("")}
+<div class="card"><h2>${li("cf")}</h2>${S.confirm.map((x,i)=>chk("",i,"confirm")).join("")}${A("confirm","Add item")}</div>
+${S.cards.map((c,i)=>`<div class="card"><h2><input class="lin" data-p="cards.${i}.title" value="${esc(c.title)}"></h2><textarea data-p="cards.${i}.body">${esc(c.body)}</textarea><button class="del" data-del="cards" data-i="${i}">Remove</button></div>`).join("")}<div style="margin:10px 0">${A("cards","Add note card")}</div>
+<div class="card"><h2>${li("bk")}</h2><p class="mut">Your journal is saved in this browser and can also be backed up to your private cloud account. Export a copy for an extra backup.</p><button class="btn s" data-act="exp">Export JSON</button> <button class="btn" data-act="imp">Import JSON</button> <button class="btn" data-act="reset">Reset</button></div>`},
+it(){if(dayIdx>=S.days.length)dayIdx=S.days.length-1;if(dayIdx<0)dayIdx=0;const i=dayIdx,d=S.days[i];if(!d)return`<p class="mut" style="margin-top:20px">No days yet.</p>`+A("days","Add day");
+const nb=(j,t)=>S.days[j]?`<button class="btn" data-day="${j}">${t}</button>`:"<span></span>";
+return`<div class="chips">${S.days.map((x,j)=>`<button class="${j==i?"on":""}" data-day="${j}"><b>${LI[lk(x)]} ${j?"Day "+j:"Prep"}</b><small>${dl(x.date)}</small></button>`).join("")}<button data-add="days"><b>＋</b><small>Add</small></button></div>
+<div class="dayhd">${scene(i)}<div class="lbl">${i?"Day "+i:"Prep day"} · ${dl(d.date)} ${d.date==="2026-12-31"?`<span class="gift-bounce">🎁 Happy New Year!</span>`:""}</div></div><p class="mut" style="margin:8px 4px 0">${caps(i)}</p><button class="btn s" data-act="addacts" style="margin-top:8px">➕ Add these to the timeline</button>
+<div class="card"><div class="row">${I(`days.${i}.date`,"Date","date")}${I(`days.${i}.title`,"Day title","text","w")}${I(`days.${i}.stay`,"Staying at","text","w")}${SEL(`days.${i}.loc`,"Scene / place",LOCS.map(x=>x[0]),"w")}</div></div>
+<div class="card">${prog(d)}</div><h3 class="big">⏰ Timeline</h3><div class="card"><div class="tl">${d.items.map((x,j)=>`<div class="it ${itc(x)}"><div class="row"><div class="f ic"><label>Icon</label><select data-p="days.${i}.items.${j}.icon">${ICONS.map(c=>`<option ${c==x.icon?"selected":""}>${c}</option>`).join("")}</select></div>${I(`days.${i}.items.${j}.time`,"Time","text","tm")}${I(`days.${i}.items.${j}.title`,"What","text","tt")}${I(`days.${i}.items.${j}.note`,"Details","text","w")}${SEL(`days.${i}.items.${j}.st`,"Status",["Planned","Done","Cancelled","Replaced"])}${I(`days.${i}.items.${j}.alt`,"Replaced by / reason")}</div>${late(d,x)}<a class="btn s" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x.title+" Switzerland")}">📍 Map</a> <button class="del" data-del="days.${i}.items" data-i="${j}">Remove</button></div>`).join("")||`<p class="mut">Nothing planned yet ⛄</p>`}</div>${A(`days.${i}.items`,"Add stop")}</div>
+<h3 class="big">✅ Day to-do</h3><div class="card">${d.todo.map((x,j)=>chk("",j,`days.${i}.todo`)).join("")}${A(`days.${i}.todo`,"Add to-do")}</div>
+<h3 class="big">📔 Journal</h3><div class="card"><div class="row">${I(`days.${i}.fav`,"⭐ Favourite place today","text","w")}${T(`days.${i}.notes`,"What happened, tickets, ideas, memories…")}</div></div><h3 class="big">📸 Photos</h3><div class="card">${phGrid(d.id,true)}<label class="btn s">＋ Add photos<input type="file" accept="image/*" multiple hidden data-up="${d.id}"></label></div>
+<div class="row" style="justify-content:space-between;margin-top:14px">${nb(i-1,"← Previous day")}${nb(i+1,"Next day →")}</div>${X("days",i)}`},
+
+st(){return `<div style="height:14px"></div>`+S.stays.map((x,i)=>`<div class="card"><div class="row">${I(`stays.${i}.name`,"Place","text","w")}${I(`stays.${i}.in`,"Check-in","date")}${I(`stays.${i}.out`,"Check-out","date")}${I(`stays.${i}.price`,"Price (MYR)","number")}${I(`stays.${i}.status`,"Status")}${I(`stays.${i}.addr`,"Address","text","w")}${I(`stays.${i}.ref`,"Booking ref (no door codes)")}${T(`stays.${i}.note`,"Notes (parking, check-in time, requests)")}</div>${X("stays",i)}</div>`).join("")+A("stays","Add stay")},
+fd(){return `<div style="height:14px"></div>`+(S.food.length?"":`<p class="mut">No restaurants yet. Add the places you want to eat and mark whether they’re booked.</p>`)+S.food.map((x,i)=>`<div class="card"><div class="row">${I(`food.${i}.name`,"Restaurant","text","w")}${I(`food.${i}.date`,"Date","date")}${I(`food.${i}.type`,"Meal / cuisine")}${I(`food.${i}.status`,"Status (Booked / Not booked)")}${I(`food.${i}.addr`,"Address")}${T(`food.${i}.note`,"Notes (what to order, hours)")}</div>${X("food",i)}</div>`).join("")+A("food","Add restaurant")},
+bd(){return`<div class="card" style="margin-top:14px"><h2>💱 CHF ⇄ MYR</h2><div class="row">${I("rate","1 CHF = ? MYR (your card rate)","number")}<div class="f"><label>CHF</label><input type="number" data-calc="chf" placeholder="0"></div><div class="f"><label>MYR</label><input type="number" data-calc="myr" placeholder="0"></div></div><p class="mut">Starting rate is roughly 5.05. The page can’t fetch live rates, so update it from your bank or card app.</p></div><div class="card" id="bs">${bs()}</div>`+S.exp.map((x,i)=>`<div class="card"><div class="row">${I(`exp.${i}.date`,"Date","date")}${I(`exp.${i}.cat`,"Category")}${I(`exp.${i}.desc`,"Description","text","w")}${I(`exp.${i}.chf`,"Amount (CHF)","number")}${I(`exp.${i}.amt`,"Amount (MYR)","number")}${I(`exp.${i}.method`,"Paid with (cash, card…)")}${SEL(`exp.${i}.who`,"Paid by",[""].concat(S.crew.map(c=>c.name)))}</div><div style="margin-top:8px">${CK(`exp.${i}.sh`,"Split equally between everyone")}</div>${X("exp",i)}</div>`).join("")+A("exp","Add expense")},
+td(){return`<div style="height:14px"></div><div class="card"><h2>✈️ Before you go</h2>${S.pre.map((x,i)=>chk("",i,"pre")).join("")}${A("pre","Add item")}</div>`+S.crew.map((c,i)=>`<div class="card"><div class="who">${av(c.av,48)}<h2 style="margin:0">${esc(c.name)}’s bag</h2><span class="mut" style="margin-left:auto">${c.pack.filter(x=>x.d).length}/${c.pack.length} packed</span></div>${c.pack.map((x,j)=>chk("",j,`crew.${i}.pack`)).join("")}${A(`crew.${i}.pack`,"Add item")}</div>`).join("")+`<div class="card"><h2>Trip to-do</h2>${S.todo.map((x,i)=>chk("",i,"todo")).join("")}${A("todo","Add item")}</div>`},
+wx(){return`<div style="height:14px"></div><p class="mut">The page can’t pull live forecasts, so check one and type it in. <a class="btn s" target="_blank" rel="noopener" href="https://www.meteoswiss.admin.ch/">MeteoSwiss</a></p>`+S.weather.map((x,i)=>`<div class="card"><div class="row">${I(`weather.${i}.date`,"Date","date")}${I(`weather.${i}.place`,"Place")}${I(`weather.${i}.fc`,"Forecast","text","w")}${I(`weather.${i}.hi`,"High °C","number")}${I(`weather.${i}.lo`,"Low °C","number")}${I(`weather.${i}.snow`,"Snow chance %","number")}</div><p data-wx="${i}" style="margin:8px 0">👕 ${wear(x)}</p><div class="row">${I(`weather.${i}.note`,"Notes","text","w")}</div><a class="btn s" target="_blank" rel="noopener" href="https://www.google.com/search?q=${encodeURIComponent("weather "+(x.place||"Switzerland")+" "+x.date)}">🔎 Forecast</a> ${X("weather",i)}</div>`).join("")+A("weather","Add day")},
+tr(){return`<div class="card" style="margin-top:14px"><h2>🎫 Swiss Travel Pass</h2><div class="row">${I("pass.name","Pass")}${I("pass.valid","Valid dates")}${I("pass.price","Price (CHF)")}${I("pass.note","Notes","text","w")}</div><p class="mut" id="trs">${trSum()}</p></div>`+S.trains.map((x,i)=>`<div class="card"><div class="rt" data-rt="${i}">${rt(x)}</div><div class="row">${I(`trains.${i}.from`,"From")}${I(`trains.${i}.to`,"To")}${I(`trains.${i}.date`,"Date","date")}${I(`trains.${i}.dep`,"Departs","time")}${I(`trains.${i}.arr`,"Arrives","time")}${I(`trains.${i}.xfer`,"Changes","number")}${I(`trains.${i}.plat`,"Platform")}${I(`trains.${i}.no`,"Train / route")}${I(`trains.${i}.price`,"Price (CHF)","number")}${I(`trains.${i}.note`,"Notes","text","w")}</div><div style="margin-top:8px;display:flex;flex-wrap:wrap">${CK(`trains.${i}.booked`,"🎟️ Ticket bought")}${CK(`trains.${i}.pass`,"🎫 Pass used")}<button class="btn s" data-sbb="${i}">🔎 Open in SBB</button></div>${X("trains",i)}</div>`).join("")+(S.trains.length?"":`<p class="mut">Add each train leg: stations, times, changes, platform and price.</p>`)+A("trains","Add train leg")},
+pl(){return`<div style="height:14px"></div>`+(S.places.length?"":`<p class="mut">Add the places you want to visit.</p>`)+S.places.map((x,i)=>`<div class="card"><div class="row">${I(`places.${i}.name`,"Place","text","w")}${I(`places.${i}.date`,"Planned day","date")}${I(`places.${i}.ticket`,"Ticket price")}${I(`places.${i}.hours`,"Opening hours")}${I(`places.${i}.addr`,"Address","text","w")}${SEL(`places.${i}.res`,"Reservation",["Not needed","To book","Booked"])}${SEL(`places.${i}.winter`,"Winter",["✅ Great in winter","⚠️ Check winter hours","❌ Closed in winter"])}${T(`places.${i}.note`,"Notes")}</div><a class="btn s" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent((x.name||"")+" "+(x.addr||"Switzerland"))}">📍 Google Maps</a> ${X("places",i)}</div>`).join("")+A("places","Add place")},
+mm(){return`<div class="card" style="margin-top:14px"><h2>📖 Our Swiss memory book</h2><div class="row">${T("memo","Dedication / trip story")}</div><button class="btn s" data-act="print">🖨️ Print / save as PDF</button></div>`+S.days.map((d,i)=>{if(!(PH[d.id]||[]).length&&!d.notes&&!d.fav)return"";return`<div class="card"><h2>${dl(d.date)} · ${esc(d.title||"Day "+i)}</h2>${d.fav?`<p>⭐ ${esc(d.fav)}</p>`:""}${d.notes?`<p style="white-space:pre-wrap">${esc(d.notes)}</p>`:""}${phGrid(d.id,false)}</div>`}).join("")+`<p class="mut">Add photos, a favourite place and journal text on each day page and they appear here.</p>`},
+bk(){return`<div class="card" style="margin-top:14px"><h2>🗂️ Booking wallet</h2><div class="row"><div class="f w"><label>Search</label><input data-bf="q" placeholder="name, booking no., date…" value="${esc(bkq)}"></div><div class="f"><label>Type</label><select data-bf="t">${["All"].concat(BKT).map(x=>`<option ${x==bkt?"selected":""}>${x}</option>`).join("")}</select></div><div class="f"><label>Payment</label><select data-bf="s">${["All","Paid","To pay"].map(x=>`<option ${x==bks?"selected":""}>${x}</option>`).join("")}</select></div></div><p class="mut" id="bks">${bkSum()}</p></div><div id="bkl">${bkList()}</div>`+A("bookings","Add booking")},
+inf(){return`<div class="card" style="margin-top:14px;background:var(--pill)"><b>⚠️ Keep it safe</b><p class="mut" style="margin:4px 0 0">Don’t type passport numbers, bank card details or hotel door codes here if you ever share this page’s link. Keep those in your phone’s secure notes.</p></div>`+[["sos","🆘 Swiss emergency numbers"],["contacts","📞 Contacts (hotels, airline, insurance, embassy)"]].map(a=>`<div class="card"><h2>${a[1]}</h2>${S[a[0]].map((x,i)=>`<div class="who"><input data-p="${a[0]}.${i}.label" value="${esc(x.label)}" placeholder="Label"><input data-p="${a[0]}.${i}.value" value="${esc(x.value)}" placeholder="Number / info"><button class="del" data-del="${a[0]}" data-i="${i}">✕</button></div>`).join("")}${A(a[0],"Add")}</div>`).join("")+`<div class="card"><h2>🗂️ Document backups</h2>${S.docs.map((x,i)=>chk("",i,"docs")).join("")}${A("docs","Add item")}</div>`}};
+
+// Supabase cloud sync. The publishable key is designed for browser use;
+// database access is restricted by the SQL Row Level Security policies.
+const SUPABASE_URL="https://mmnmcramqqivwmagirtv.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY="sb_publishable_bmfHov96lojVlZk7VBK2aw_syqOWKr_";
+if(window.supabase?.createClient){
+  sbClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
+}else{
+  cloudStatus="Supabase library could not load";
+}
+function cloudMessage(msg){cloudStatus=msg;renderCloudBar()}
+function renderCloudBar(){
+  const el=document.getElementById("cloudbar");if(!el)return;
+  if(!sbClient){el.innerHTML=`<div class="cloud-panel"><b>☁️ Cloud sync</b><span class="cloud-status">${esc(cloudStatus)}</span></div>`;return}
+  if(!cloudUser){
+    el.innerHTML=`<div class="cloud-panel"><span class="cloud-title">☁️ Swiss Journal Cloud Sync</span><span class="cloud-status">Sign in to sync your complete journal, including day photos, bookings, budget, notes and trip details.</span><input id="cloud-email" type="email" autocomplete="email" placeholder="Email address"><input id="cloud-password" type="password" autocomplete="current-password" placeholder="Password"><button class="primary" id="cloud-login">Log in</button><button id="cloud-signup">Create account</button><span class="cloud-error" id="cloud-error">${esc(cloudStatus==="Local only"?"":cloudStatus)}</span></div>`;
+  }else{
+    el.innerHTML=`<div class="cloud-panel"><span class="cloud-title">☁️ Cloud sync</span><span class="cloud-status">${esc(cloudStatus)} · ${esc(cloudUser.email||"Signed in")}</span><button id="cloud-sync-now">Sync all data + photos now</button><button id="cloud-logout">Log out</button></div>`;
+  }
+}
+function setCloudError(msg){const e=document.getElementById("cloud-error");if(e)e.textContent=msg;else cloudMessage(msg)}
+async function pushCloud(){
+  if(!sbClient||!cloudUser)return;
+  if(cloudBusy){queueCloudSave();return}
+  cloudBusy=true;
+  const revisionAtStart=cloudRevision;
+  cloudMessage("Saving your complete journal and photos to cloud…");
+  // PH contains the compressed photo data URLs. Store it alongside all planner state.
+  const completeJournal={...S,_photos:PH};
+  const {error}=await sbClient.from("swiss_planner_data").upsert({
+    user_id:cloudUser.id,data:completeJournal,updated_at:new Date().toISOString()
+  },{onConflict:"user_id"});
+  cloudBusy=false;
+  if(error){cloudMessage("Cloud save failed: "+error.message+". If you added many photos at once, try syncing fewer photos at a time.");return}
+  const photoCount=Object.values(PH).reduce((n,arr)=>n+(Array.isArray(arr)?arr.length:0),0);
+  cloudMessage(`Everything synced ✓ · ${photoCount} photos backed up`);
+  if(cloudRevision!==revisionAtStart)queueCloudSave();
+}
+function queueCloudSave(){
+  cloudRevision++;
+  if(!sbClient||!cloudUser)return;
+  clearTimeout(cloudSaveTimer);
+  cloudSaveTimer=setTimeout(()=>pushCloud(),1000);
+}
+async function pullCloud(){
+  if(!sbClient||!cloudUser)return;
+  cloudMessage("Checking cloud journal…");
+  const {data,error}=await sbClient.from("swiss_planner_data").select("data,updated_at").eq("user_id",cloudUser.id).maybeSingle();
+  if(error){cloudMessage("Could not load cloud data: "+error.message);return}
+  if(data?.data){
+    const useCloud=confirm("A cloud copy of your Switzerland Travel Journal was found.\n\nOK = restore the complete cloud journal, including backed-up photos, to this browser.\nCancel = keep this browser's current journal and upload all its data and photos to the cloud.");
+    if(useCloud){
+      const cloudCopy=data.data;
+      PH=cloudCopy._photos&&typeof cloudCopy._photos==="object"?cloudCopy._photos:PH;
+      delete cloudCopy._photos;
+      S=cloudCopy;
+      try{localStorage.setItem(KEY,JSON.stringify(S));localStorage.setItem(PHK,JSON.stringify(PH))}catch(e){cloudMessage("Cloud data loaded, but browser storage is full. Your cloud backup is safe.")}
+      draw();
+      // Re-upload after restore so any photos that existed only on this device
+      // are also included in the cloud copy (useful when migrating from the older version).
+      await pushCloud();
+      const photoCount=Object.values(PH).reduce((n,arr)=>n+(Array.isArray(arr)?arr.length:0),0);
+      cloudMessage(`Complete cloud journal restored ✓ · ${photoCount} photos backed up`);
+    }else{
+      await pushCloud();
+    }
+  }else{
+    await pushCloud();
+  }
+}
+async function cloudLogin(){
+  const email=document.getElementById("cloud-email")?.value.trim();
+  const password=document.getElementById("cloud-password")?.value;
+  if(!email||!password){setCloudError("Enter your email and password.");return}
+  cloudMessage("Signing in…");
+  const {data,error}=await sbClient.auth.signInWithPassword({email,password});
+  if(error){setCloudError(error.message);return}
+  cloudUser=data.user;renderCloudBar();await pullCloud();
+}
+async function cloudSignup(){
+  const email=document.getElementById("cloud-email")?.value.trim();
+  const password=document.getElementById("cloud-password")?.value;
+  if(!email||!password){setCloudError("Enter your email and password.");return}
+  if(password.length<8){setCloudError("Use a password with at least 8 characters.");return}
+  cloudMessage("Creating account…");
+  const {data,error}=await sbClient.auth.signUp({email,password});
+  if(error){setCloudError(error.message);return}
+  if(data.session){cloudUser=data.user;renderCloudBar();await pullCloud()}
+  else{cloudMessage("Account created. Check your email to confirm, then log in here.");}
+}
+async function cloudLogout(){
+  if(!sbClient)return;
+  await sbClient.auth.signOut();cloudUser=null;cloudMessage("Signed out · local copy remains on this device");renderCloudBar();
+}
+document.addEventListener("click",e=>{
+  if(e.target.id==="cloud-login")cloudLogin();
+  if(e.target.id==="cloud-signup")cloudSignup();
+  if(e.target.id==="cloud-logout")cloudLogout();
+  if(e.target.id==="cloud-sync-now")pushCloud();
+});
+if(sbClient){
+  sbClient.auth.getSession().then(async({data})=>{
+    if(data.session?.user){cloudUser=data.session.user;renderCloudBar();await pullCloud()}
+    else renderCloudBar();
+  });
+  sbClient.auth.onAuthStateChange((_event,session)=>{
+    if(session?.user){cloudUser=session.user;renderCloudBar()}
+    else if(cloudUser){cloudUser=null;renderCloudBar()}
+  });
+}
+
+function draw(){fix();renderCloudBar();nav.innerHTML=tabs.map(t=>`<button class="${t[0]==tab?"on":""}" data-tab="${t[0]}">${t[1]}</button>`).join("");main.innerHTML=V[tab]()+GROUND;if(tab==="it"){const strip=main.querySelector(".chips"),active=strip?.querySelector("button.on");if(strip&&active){const left=Math.max(0,active.offsetLeft-strip.clientWidth/2+active.clientWidth/2);strip.scrollTo({left,behavior:"smooth"})}}tick()}
+function tick(){const a=document.getElementById("cd0");if(!a)return;let ms=new Date(S.flights[0]?.dep)-new Date();if(!(ms>0))ms=0;a.textContent=Math.floor(ms/864e5);cd1.textContent=Math.floor(ms/36e5)%24;cd2.textContent=Math.floor(ms/6e4)%60}
+setInterval(tick,30000);
+function upTot(){const f=sum(S.flights),h=sum(S.stays),e=sum(S.exp);if(window.tot){tot.textContent=fm(f+h+e);sub.textContent=`Flights ${fm(f)} · Stays ${fm(h)} · Spending ${fm(e)}`}}
+
+// Keyboard navigation: Right/Next = next day, Left/Previous = previous day.
+document.addEventListener("keydown",e=>{
+  if(tab!=="it") return;
+  const el=e.target;
+  if(el && (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+  if(e.altKey || e.ctrlKey || e.metaKey) return;
+  let step=0;
+  if(e.key==="ArrowRight" || e.key==="PageDown" || e.key==="n" || e.key==="N") step=1;
+  else if(e.key==="ArrowLeft" || e.key==="PageUp" || e.key==="p" || e.key==="P") step=-1;
+  if(!step) return;
+  const next=Math.max(0,Math.min(S.days.length-1,dayIdx+step));
+  if(next===dayIdx) return;
+  e.preventDefault();
+  dayIdx=next;
+  draw();
+  const strip=main.querySelector(".chips");
+  const active=strip?.querySelector("button.on");
+  if(strip && active) strip.scrollTo({left:Math.max(0,active.offsetLeft-strip.clientWidth/2+active.clientWidth/2),behavior:"smooth"});
+});
+
+const travelToast=document.createElement("div");travelToast.id="travel-toast";travelToast.setAttribute("role","status");document.body.appendChild(travelToast);
+let toastTimer;
+function characterSurprise(el){
+  const messages=["✨ A little Swiss magic!","📸 Say cheese! Memory captured!","☕ Hot chocolate break?","❄️ Snowflake wishes for your trip!","🏔️ The mountains are calling!","🏔️ Your little alpine guide says hello!"];
+  const j=[...el.parentElement.querySelectorAll(".day-figure")].indexOf(el);
+  travelToast.textContent=messages[(Math.max(0,j)+dayIdx)%messages.length];
+  travelToast.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>travelToast.classList.remove("show"),2200);
+  el.classList.remove("character-pop");void el.getBoundingClientRect();el.classList.add("character-pop");
+}
+document.addEventListener("click",e=>{const c=e.target.closest(".day-figure");if(c)characterSurprise(c)});
+document.addEventListener("keydown",e=>{if(e.target?.classList?.contains("day-figure")&&(e.key==="Enter"||e.key===" ")){e.preventDefault();characterSurprise(e.target)}});
+document.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const d=b.dataset;
+if(d.tab){tab=d.tab;if(d.go!==undefined)dayIdx=+d.go;draw();scrollTo(0,0)}
+else if(d.day!==undefined){dayIdx=+d.day;draw();scrollTo(0,0)}
+else if(d.sbb!==undefined){const x=S.trains[+d.sbb],dt=(x.date||"").split("-");window.open("https://www.sbb.ch/en/buying/pages/fahrplan/fahrplan.xhtml?von="+encodeURIComponent(x.from||"")+"&nach="+encodeURIComponent(x.to||"")+(dt.length==3?"&datum="+dt[2]+"."+dt[1]+"."+dt[0]:"")+(x.dep?"&zeit="+x.dep:"")+"&moment=ABFAHRT","_blank","noopener")}
+else if(d.ph!==undefined){PH[d.ph].splice(+d.i,1);savePH();draw()}
+else if(d.add){const a=P(d.add),k=d.add.split(".").pop();a.push(JSON.parse(JSON.stringify(blank[k])));if(d.add=="days")dayIdx=a.length-1;save();draw()}
+else if(d.del){if(confirm("Remove this?")){P(d.del).splice(+d.i,1);save();draw()}}
+else if(d.act=="exp"){const u=URL.createObjectURL(new Blob([JSON.stringify({...S,_photos:PH},null,1)],{type:"application/json"})),a=document.createElement("a");a.href=u;a.download="swiss-journal.json";a.click()}
+else if(d.act=="imp"){const i=document.createElement("input");i.type="file";i.accept=".json";i.onchange=()=>{const r=new FileReader();r.onload=()=>{try{const j=JSON.parse(r.result);if(j.flights&&j.days){PH=j._photos||{};delete j._photos;S=j;save();savePH();draw()}}catch(x){alert("Invalid file")}};r.readAsText(i.files[0])};i.click()}
+else if(d.act=="addacts"){const dd=S.days[dayIdx];acts(dayIdx).forEach(a=>dd.items.push({time:"",title:a.l,note:a.n,icon:a.i,st:"Planned",alt:""}));save();draw()}
+else if(d.act=="print"){print()}
+else if(d.act=="reset"){if(confirm("Replace everything with the starter data?")){S=JSON.parse(JSON.stringify(D));save();draw()}}});
+document.addEventListener("input",e=>{const t=e.target,p=t.dataset.p;if(t.dataset.calc){calc(t);return}if(t.dataset.bf){bfSet(t);return}if(!p)return;setP(p,t.type=="checkbox"?t.checked:t.value);if(t.type=="checkbox")t.parentElement.classList.toggle("done",t.checked);save();extra(p,t)});
+document.addEventListener("change",e=>{const t=e.target,p=t.dataset.p||"";if(t.dataset.up){upl(t);return}if(/^crew\.\d+\.(name|av)$|^crew\.\d+\.pack\.\d+\.d$|^days\.\d+\.items\.\d+\.st$|^days\.\d+\.loc$/.test(p))draw()});
+(()=>{const w=document.createElement("div");w.className="snow";for(let i=0;i<42;i++){const f=document.createElement("i");f.textContent=["❄","❅","❆"][i%3];f.style.cssText=`left:${Math.random()*100}%;font-size:${10+Math.random()*12}px;animation-duration:${8+Math.random()*10}s;animation-delay:-${Math.random()*14}s`;w.appendChild(f)}document.body.appendChild(w)})();
+draw();
+</script></body></html>
