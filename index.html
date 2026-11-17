@@ -275,7 +275,7 @@ ${alerts()}<div class="card"><h2>${li("tv")}</h2>${S.crew.map((c,i)=>`<div class
 <h3 class="big">${li("qo","big")}</h3>${S.days.map((d,i)=>`<button class="card dc" data-tab="it" data-go="${i}"><small>${dl(d.date)}</small><div>${esc(d.title||"Free day")}</div><span class="mut">${esc(d.stay)}</span></button>`).join("")}
 <div class="card"><h2>${li("cf")}</h2>${S.confirm.map((x,i)=>chk("",i,"confirm")).join("")}${A("confirm","Add item")}</div>
 ${S.cards.map((c,i)=>`<div class="card"><h2><input class="lin" data-p="cards.${i}.title" value="${esc(c.title)}"></h2><textarea data-p="cards.${i}.body">${esc(c.body)}</textarea><button class="del" data-del="cards" data-i="${i}">Remove</button></div>`).join("")}<div style="margin:10px 0">${A("cards","Add note card")}</div>
-<div class="card"><h2>${li("bk")}</h2><p class="mut">Your journal is saved in this browser and can also be backed up to your private cloud account. Export a copy for an extra backup.</p><button class="btn s" data-act="exp">Export JSON</button> <button class="btn" data-act="imp">Import JSON</button> <button class="btn" data-act="reset">Reset</button></div>`},
+<div class="card"><h2>${li("bk")}</h2><p class="mut">Your journal is saved in this browser and shared with everyone who verifies an email account. Export a copy for an extra backup.</p><button class="btn s" data-act="exp">Export JSON</button> <button class="btn" data-act="imp">Import JSON</button> <button class="btn" data-act="reset">Reset</button></div>`},
 it(){if(dayIdx>=S.days.length)dayIdx=S.days.length-1;if(dayIdx<0)dayIdx=0;const i=dayIdx,d=S.days[i];if(!d)return`<p class="mut" style="margin-top:20px">No days yet.</p>`+A("days","Add day");
 const nb=(j,t)=>S.days[j]?`<button class="btn" data-day="${j}">${t}</button>`:"<span></span>";
 return`<div class="chips">${S.days.map((x,j)=>`<button class="${j==i?"on":""}" data-day="${j}"><b>${LI[lk(x)]} ${j?"Day "+j:"Prep"}</b><small>${dl(x.date)}</small></button>`).join("")}<button data-add="days"><b>＋</b><small>Add</small></button></div>
@@ -297,8 +297,8 @@ mm(){return`<div class="card" style="margin-top:14px"><h2>📖 Our Swiss memory 
 bk(){return`<div class="card" style="margin-top:14px"><h2>🗂️ Booking wallet</h2><div class="row"><div class="f w"><label>Search</label><input data-bf="q" placeholder="name, booking no., date…" value="${esc(bkq)}"></div><div class="f"><label>Type</label><select data-bf="t">${["All"].concat(BKT).map(x=>`<option ${x==bkt?"selected":""}>${x}</option>`).join("")}</select></div><div class="f"><label>Payment</label><select data-bf="s">${["All","Paid","To pay"].map(x=>`<option ${x==bks?"selected":""}>${x}</option>`).join("")}</select></div></div><p class="mut" id="bks">${bkSum()}</p></div><div id="bkl">${bkList()}</div>`+A("bookings","Add booking")},
 inf(){return`<div class="card" style="margin-top:14px;background:var(--pill)"><b>⚠️ Keep it safe</b><p class="mut" style="margin:4px 0 0">Don’t type passport numbers, bank card details or hotel door codes here if you ever share this page’s link. Keep those in your phone’s secure notes.</p></div>`+[["sos","🆘 Swiss emergency numbers"],["contacts","📞 Contacts (hotels, airline, insurance, embassy)"]].map(a=>`<div class="card"><h2>${a[1]}</h2>${S[a[0]].map((x,i)=>`<div class="who"><input data-p="${a[0]}.${i}.label" value="${esc(x.label)}" placeholder="Label"><input data-p="${a[0]}.${i}.value" value="${esc(x.value)}" placeholder="Number / info"><button class="del" data-del="${a[0]}" data-i="${i}">✕</button></div>`).join("")}${A(a[0],"Add")}</div>`).join("")+`<div class="card"><h2>🗂️ Document backups</h2>${S.docs.map((x,i)=>chk("",i,"docs")).join("")}${A("docs","Add item")}</div>`}};
 
-// Supabase cloud sync with passwordless email OTP for a shared cross-device account.
-// Existing anonymous/local journal data is preserved and migrated when the email is verified.
+// Supabase shared-journal sync with passwordless email OTP.
+// All authenticated users share one journal row; first login migrates the current user's older private row if needed.
 const SUPABASE_URL="https://mmnmcramqqivwmagirtv.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY="sb_publishable_bmfHov96lojVlZk7VBK2aw_syqOWKr_";
 if(window.supabase?.createClient){
@@ -310,7 +310,7 @@ function renderCloudBar(){
   const el=document.getElementById("cloudbar");if(!el)return;
   const signed=!!cloudUser && !cloudUser.is_anonymous;
   const email=cloudUser?.email||"";
-  el.innerHTML=`<div class="cloud-panel"><span class="cloud-title">☁️ Swiss Journal Cloud Sync</span><span class="cloud-status">${esc(cloudStatus)}</span>${signed?`<span class="cloud-status">Connected: ${esc(email)}</span><button id="cloud-sync-now">Sync now</button>`:`<input id="cloud-email" type="email" autocomplete="email" placeholder="Your email address" value="${esc(otpEmail)}"><button class="primary" id="cloud-send-otp">Send verification code</button><input id="cloud-otp" inputmode="numeric" autocomplete="one-time-code" placeholder="6-digit code" maxlength="10"><button class="primary" id="cloud-verify-otp">Verify & sync devices</button>`}</div>`;
+  el.innerHTML=`<div class="cloud-panel"><span class="cloud-title">☁️ Shared Swiss Journal</span><span class="cloud-status">${esc(cloudStatus)}</span>${signed?`<span class="cloud-status">Connected: ${esc(email)}</span><button id="cloud-sync-now">Sync now</button>`:`<input id="cloud-email" type="email" autocomplete="email" placeholder="Your email address" value="${esc(otpEmail)}"><button class="primary" id="cloud-send-otp">Send verification code</button><input id="cloud-otp" inputmode="numeric" autocomplete="one-time-code" placeholder="6-digit code" maxlength="10"><button class="primary" id="cloud-verify-otp">Join shared journal</button>`}</div>`;
 }
 async function pushCloud(){
   if(!sbClient||!cloudUser)return;
@@ -318,18 +318,18 @@ async function pushCloud(){
   cloudBusy=true;const revisionAtStart=cloudRevision;
   cloudMessage("Saving your journal and photos to your private cloud…");
   const completeJournal={...S,_photos:PH};
-  const {error}=await sbClient.from("swiss_planner_data").upsert({user_id:cloudUser.id,data:completeJournal,updated_at:new Date().toISOString()},{onConflict:"user_id"});
+  const {error}=await sbClient.from("swiss_planner_shared").upsert({journal_id:"swiss-trip",data:completeJournal,updated_by:cloudUser.id,updated_at:new Date().toISOString()},{onConflict:"journal_id"});
   cloudBusy=false;
   if(error){cloudMessage("Cloud save failed: "+error.message);return}
   const photoCount=Object.values(PH).reduce((n,arr)=>n+(Array.isArray(arr)?arr.length:0),0);
-  cloudMessage(`Everything synced ✓ · ${photoCount} photos backed up`);
+  cloudMessage(`Shared journal synced ✓ · ${photoCount} photos`);
   if(cloudRevision!==revisionAtStart)queueCloudSave();
 }
 function queueCloudSave(){cloudRevision++;if(!sbClient||!cloudUser)return;clearTimeout(cloudSaveTimer);cloudSaveTimer=setTimeout(()=>pushCloud(),1000)}
 async function pullCloud(){
   if(!sbClient||!cloudUser)return;
   cloudMessage("Loading your cloud journal…");
-  const {data,error}=await sbClient.from("swiss_planner_data").select("data,updated_at").eq("user_id",cloudUser.id).maybeSingle();
+  const {data,error}=await sbClient.from("swiss_planner_shared").select("data,updated_at").eq("journal_id","swiss-trip").maybeSingle();
   if(error){cloudMessage("Could not load cloud data: "+error.message);return}
   if(data?.data){const cloudCopy=data.data;PH=cloudCopy._photos&&typeof cloudCopy._photos==="object"?cloudCopy._photos:{};delete cloudCopy._photos;S=cloudCopy;try{localStorage.setItem(KEY,JSON.stringify(S));localStorage.setItem(PHK,JSON.stringify(PH))}catch(e){cloudMessage("Cloud journal loaded, but browser storage is full. Cloud copy remains safe.")};draw();const n=Object.values(PH).reduce((a,x)=>a+(Array.isArray(x)?x.length:0),0);cloudMessage(`Cloud journal loaded ✓ · ${n} photos available`)}
   else{await pushCloud()}
@@ -350,11 +350,21 @@ async function verifyEmailCode(){
   if(error){cloudMessage("Verification failed: "+error.message);return}
   cloudUser=data.user||data.session?.user;
   if(!cloudUser){cloudMessage("Verified, but no user session was returned. Please try again.");return}
-  // If this email account already has a journal, use it. Otherwise migrate the current
-  // browser's restored journal (including photos) into the newly verified account.
-  const {data:existing,error:readError}=await sbClient.from("swiss_planner_data").select("data").eq("user_id",cloudUser.id).maybeSingle();
-  if(readError){cloudMessage("Could not check the cloud journal: "+readError.message);renderCloudBar();return}
-  if(existing?.data){await pullCloud()}else{await pushCloud()}
+  // Everyone who verifies an email joins the same shared journal.
+  // If it does not exist yet, migrate this account's previous private journal if present.
+  const {data:shared,error:sharedError}=await sbClient.from("swiss_planner_shared").select("data").eq("journal_id","swiss-trip").maybeSingle();
+  if(sharedError){cloudMessage("Could not check the shared journal: "+sharedError.message);renderCloudBar();return}
+  if(shared?.data){await pullCloud()}
+  else{
+    const {data:legacy,error:legacyError}=await sbClient.from("swiss_planner_data").select("data").eq("user_id",cloudUser.id).maybeSingle();
+    if(legacyError){cloudMessage("Could not check your previous journal: "+legacyError.message);renderCloudBar();return}
+    if(legacy?.data){
+      const legacyCopy=legacy.data;
+      PH=legacyCopy._photos&&typeof legacyCopy._photos==="object"?legacyCopy._photos:{};
+      delete legacyCopy._photos;S=legacyCopy;
+      await pushCloud();
+    }else{await pushCloud()}
+  }
   renderCloudBar();
 }
 async function startEmailCloud(){
@@ -370,9 +380,17 @@ document.addEventListener("click",e=>{
   if(e.target.id==="cloud-send-otp")sendEmailCode();
   if(e.target.id==="cloud-verify-otp")verifyEmailCode();
 });
+let sharedChannel=null;
 if(sbClient){
   sbClient.auth.onAuthStateChange((_event,session)=>{if(session?.user){cloudUser=session.user;renderCloudBar()}else{cloudUser=null;renderCloudBar()}});
   startEmailCloud();
+  const attachSharedRealtime=()=>{
+    if(!cloudUser || cloudUser.is_anonymous || sharedChannel)return;
+    sharedChannel=sbClient.channel("swiss-trip-live")
+      .on("postgres_changes",{event:"*",schema:"public",table:"swiss_planner_shared",filter:"journal_id=eq.swiss-trip"},()=>pullCloud())
+      .subscribe();
+  };
+  sbClient.auth.onAuthStateChange((_event,session)=>{if(session?.user && !session.user.is_anonymous)attachSharedRealtime()});
 }
 
 function draw(){fix();renderCloudBar();nav.innerHTML=tabs.map(t=>`<button class="${t[0]==tab?"on":""}" data-tab="${t[0]}">${t[1]}</button>`).join("");main.innerHTML=V[tab]()+GROUND;if(tab==="it"){const strip=main.querySelector(".chips"),active=strip?.querySelector("button.on");if(strip&&active){const left=Math.max(0,active.offsetLeft-strip.clientWidth/2+active.clientWidth/2);strip.scrollTo({left,behavior:"smooth"})}}tick()}
